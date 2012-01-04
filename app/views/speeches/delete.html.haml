@@ -1,0 +1,6 @@
+= link_to "<< Назад, к списку докладов", speeches_path
+%h2 Удалить доклад
+= form_for(:speech, :url => {:action => 'destroy'}, :id => @speech.id) do |f|
+	%p Вы уверены, что хотите удалить этот доклад?
+	%p @speech.title
+	= f.submit "Удалить доклад"

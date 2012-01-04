@@ -1,0 +1,15 @@
+.nav
+	%ul
+		%li= link_to "На главную", home_path
+		%li= link_to "О конференции", about_path
+		%li= link_to "Оргкомитет", org_committee_path
+		%li= link_to "Правила оформления тезисов", thesis_rules_path
+		%li= link_to "Контакты с организаторами", contacts_path
+		%li= link_to "Регистрация заявок на участие", registration_path
+		- if Rails.env.development?
+			%li
+				%B= link_to "Заботы разработчика", tasks_path
+			%li
+				%B= link_to "Перейти к новостям (девелопмент фича)", posts_path	
+			%li
+				%B= link_to "Перейти к докладам (заявкам на доклады) (девелопмент фича)", speeches_path

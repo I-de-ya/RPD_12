@@ -1,17 +1,33 @@
 RPD12::Application.routes.draw do
+	
+	post "speeches/create_entry_form"
+	
+	
+	get 'speeches/congrats'
+	match '/congrats', :to => 'speeches#congrats'
+	
+	
+	
   get "pages/home"
-
+	match '/home', :to => 'posts#news_page'
   get "pages/about"
-
-  get "pages/materials"
-
+	match '/about', :to => 'pages#about'
+  get "pages/org_committee"
+	match '/org_committee', :to => 'pages#org_committee'
   get "pages/thesis_rules"
-
+	match '/thesis_rules', :to => 'pages#thesis_rules'
   get "pages/contacts"
-
+	match '/contacts', :to => 'pages#contacts'
   get "pages/registration"
+  match '/registration', :to => 'speeches#new_entry_form'
+  get "pages/tasks"
+  match '/tasks', :to => 'pages#tasks'
+    
+  resources :pages
+  resources :posts
+  resources :speeches
   
-  root :to => "pages#home"
+  root :to => "posts#news_page"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

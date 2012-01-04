@@ -8,8 +8,8 @@ class PagesController < ApplicationController
  		@title = "О конференции"
   end
 
-  def materials
-  	@title = "Материалы конференции"
+  def org_committee
+  	@title = "Оргкомитет"
   end
 
   def thesis_rules
@@ -24,4 +24,7 @@ class PagesController < ApplicationController
   	@title = "Регистрация участников"
   end
 
+  def tasks
+  	@title = "Заботы разработчика"
+  end	
 end

@@ -3,7 +3,7 @@ module ApplicationHelper
 
 	# Return a title on a per-page basis
 	def title
-		base_title = "Конференция \"РПД-2012\""
+		base_title = "\"РПД-2012\" IX Международный симпозиум по радиационной плазмодинамике"
 		if @title.nil?
 			base_title
 		else

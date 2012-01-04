@@ -1,0 +1,23 @@
+!!!
+%html
+	%head
+		%title= title
+		= stylesheet_link_tag "application"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		%header
+			%h1 IX международный симпозиум по радиационной плазмодинамике
+		%left_bar
+			= render 'layouts/nav'
+		%content
+			- if flash[:notice]
+				%p= flash[:notice]
+			- if flash[:success]
+				%p= flash[:success]
+			= yield
+		%footer
+			= link_to 'Русский', '#'
+			|
+			= link_to 'English', '#'
+			Designed by innerwhisper.

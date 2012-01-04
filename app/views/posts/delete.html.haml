@@ -1,0 +1,6 @@
+= link_to "<< Назад, к списку новостей", posts_path
+%h2 Удалить новость
+= form_for(:post, :url => {:action => 'destroy'}, :id => @post.id) do |f|
+	%p Вы уверены, что хотите удалить новость?
+	%p @post.title
+	= f.submit "Удалить новость"

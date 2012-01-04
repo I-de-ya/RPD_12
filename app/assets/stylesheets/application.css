@@ -5,3 +5,80 @@
  *= require_self
  *= require_tree . 
 */
+html {
+	background: #CFCFCF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+body {
+	width: 90%;
+	margin: 1em auto;
+	background: white;
+	padding: 1em;
+}
+header {
+	border: solid 1px black;
+	height: 80px;
+	margin: 1em 1em;
+	text-align:center;
+	background: #FFD264;
+}
+left_bar {
+	margin-left:1em;
+	float: left;
+	width: 25%;
+}
+content {
+	border:solid 1px black;
+	float: left;
+	width: 71%;
+	margin-right:1em;
+}
+footer {
+	clear:both;
+	text-align:right;
+	margin-top:30em;
+}
+
+ /* Navigation */
+
+.nav {
+	text-align:center;
+}
+
+.nav ul{
+	float:right;
+	margin:0;
+	padding:0;
+}
+.nav li{
+
+	color: green;
+	margin-top:0px;
+	list-style-type:none;
+}
+.nav li a{
+	display: block;
+	text-decoration:none;	
+	color: white;
+	background: #C4982D;
+	width:240px;
+	border: solid 1px black;
+	padding: 0 20px;
+}
+
+.nav li a:link{
+	color: blue;
+}
+
+.nav li a:visited{
+	color: white;
+}
+
+.nav li a:hover{
+	text-decoration:underline;
+	color: black;
+}
+
+.nav li a:active{
+	color: red;
+}

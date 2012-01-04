@@ -1,0 +1,27 @@
+Внимание! Заявки принимаются до 15-20 февраля 2012 года
+%p
+= form_for @speech, :url => { :action => "create_entry_form" } do |f|
+	= f.label :title, "Название доклада"
+	%p
+		= f.text_field :title
+	%p
+		= f.label :organization, "Название организации"
+	%p	
+		= f.text_field :organization
+	%p
+		= f.label :author_name, "ФИО автора (коллектива авторов)"
+	%p	
+		= f.text_field :author_name
+	%p
+		= f.label :phone, "Контактный телефон (несколько телефонов)"
+	%p	
+		= f.text_field :phone
+	%p
+		= f.label :email, "Контактный e-mail (несколько e-mail'ов)"
+	%p	
+		= f.text_field :email
+	%p
+		= f.label :delivery_subscription, "Хотите ли вы подписаться на рассылку новостей?"
+	%p	
+		= f.check_box :delivery_subscription
+	= f.submit "Поcлать заявку"

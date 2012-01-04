@@ -1,0 +1,9 @@
+= form_for @post do |f|
+	= f.label :title, "Заголовок новости"
+	%p
+		= f.text_field :title
+	%p
+		= f.label :body, "Собственно, сама новость"
+	%p	
+		= f.text_area :body
+	= f.submit "Опубликовать"

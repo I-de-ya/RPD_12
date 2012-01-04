@@ -1,0 +1,25 @@
+= form_for @speech do |f|
+	= f.label :title, "Название доклада"
+	%p
+		= f.text_field :title
+	%p
+		= f.label :organization, "Название организации"
+	%p	
+		= f.text_area :organization
+	%p
+		= f.label :author_name, "Имя автора"
+	%p	
+		= f.text_area :author_name
+	%p
+		= f.label :phone, "Контактный телефон"
+	%p	
+		= f.text_area :phone
+	%p
+		= f.label :email, "Контактный e-mail"
+	%p	
+		= f.text_area :email
+	%p
+		= f.label :delivery_subscription, "Подписать ли на рассылку новостей"
+	%p	
+		= f.check_box :delivery_subscription
+	= f.submit "Подтвердить"

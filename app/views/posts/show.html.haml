@@ -1,0 +1,11 @@
+%h1 Текущая новость
+%table
+	%tr
+		%td
+			%B Название
+		%td= @post.title
+	%tr
+		%td
+			%B Сама новость
+		%td= @post.body
+= link_to "<< Го к списку новостей", posts_path
