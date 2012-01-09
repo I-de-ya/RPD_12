@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'russian', '~> 0.6.0'
 gem 'haml'
+gem 'dynamic_form'
 
 
 # Gems used only for assets and not required
