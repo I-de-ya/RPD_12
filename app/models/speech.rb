@@ -1,3 +1,3 @@
 class Speech < ActiveRecord::Base
-	validates :title, :organization, :author_name, :phone, :presence => true
+	validates :title, :organization, :author_name, :presence => true
 end

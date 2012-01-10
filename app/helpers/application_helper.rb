@@ -10,4 +10,12 @@ module ApplicationHelper
 			"#{base_title} | #{@title}"
 		end
 	end
+
+	def language_selector
+		if I18n.locale == :ru
+			link_to "English version", url_for(:locale => 'en')
+		else
+			link_to "Русская версия", url_for(:locale => 'ru')
+		end
+	end
 end

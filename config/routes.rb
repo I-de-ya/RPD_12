@@ -2,12 +2,11 @@ RPD12::Application.routes.draw do
 	
 	post "speeches/create_entry_form"
 	
-	
 	get 'speeches/congrats'
 	match '/congrats', :to => 'speeches#congrats'
 	
-	
-	
+	get "pages/home"
+  match '/home', :to => 'posts#news_page'
   get "pages/home"
 	match '/home', :to => 'posts#news_page'
   get "pages/about"
@@ -22,11 +21,14 @@ RPD12::Application.routes.draw do
   match '/registration', :to => 'speeches#new_entry_form'
   get "pages/tasks"
   match '/tasks', :to => 'pages#tasks'
-    
-  resources :pages
-  resources :posts
-  resources :speeches
-  
+ 
+  scope "(:locale)", :locale => /ru|en/ do
+    resources :pages
+    resources :posts
+    resources :speeches
+  end
+
+  match '/:locale' => 'posts#news_page'
   root :to => "posts#news_page"
 
   # The priority is based upon order of creation:
