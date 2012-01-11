@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  main_page: "Main page"
+  about_page: "About"
+  org_commitee_page: "Organisation committee"
+  thesis_rules_page: "Thesis rules(?)"
+  contacts_page: "Contacts"
+  registration_page: "Registration"
