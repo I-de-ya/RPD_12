@@ -9,36 +9,57 @@ html {
 	background: #CFCFCF;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
+
 body {
 	min-width:650px;
 	width: 90%;
 	margin: 0.5em auto;
-	background: #6E6E6E;
+	background: #B8B8B8;
+	border: solid 1px;
 }
 header {
-	margin-top:1em;
-	padding:1em;
+
+	padding: 0 6em 1.5em 6em;
 	text-align:center;
-	background:white;
+	background: #2D2D2D;
+	color: white;
+}
+
+.maintitle {
+	margin-top:0;
+	padding:0.1em 0 0.1em 0;
+	text-align:center;
+	background: white;
+	color: black;
 }
 
 left_bar {
 	float: left;
-	width: 100px;
+	width: 19em;
 }
 
 .content {
-	border:solid 1px black;
-	margin-top:1em;
-	margin-right:1em;
 	margin-left:20em;
-	background: #FFD264;
+	background: white;
 	min-height:25em;
+	padding: 0 1em 0 1em; 
+	border-right: solid 1px;
+}
+
+.title {
+	text-align:center;
+	color:white;
+	background: #555555;
+	padding: 0.5em;
+	margin: 0 1em 0 1em;
 }
 
 footer {
+	border-top:solid 1px black;
+	background:white;
 	clear:both;
 	text-align:right;
+	padding: 0.5em 0 0.5em 0;
 }
 
  /* Navigation */
@@ -46,7 +67,7 @@ footer {
 .nav {
 	padding:1em 0em 1em 1em;
 	text-align:center;
-	background:#FFD264;
+	background:#555555;
 	width:18em;
 }
 
@@ -60,7 +81,7 @@ footer {
 	width:18em;
 	margin-bottom:1em;
 	list-style-type:none;
-	background: #6E6E6E;
+	background: #B8B8B8;
 	border-top: 1.5px solid;
 	border-bottom: 1.5px solid;
 	border-left: 1.5px solid;
@@ -68,20 +89,20 @@ footer {
 .nav li a{
 	display: block;
 	text-decoration:none;	
+	font-size:14pt;
 }
 
 .nav li a:link{
-	color: white;
-	font:bold;
+	color: black;
 }
 
 .nav li a:visited{
-	color: white;
+	color: black;
 }
 
 .nav li a:hover{
 	text-decoration:underline;
-	color: white;
+	color: black;
 }
 
 .nav li a:active{

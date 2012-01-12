@@ -1,4 +1,4 @@
-%h1.title Докладики
+%h1 Докладики
 = link_to "Создать доклад", new_speech_path
 %table
 	%tr

@@ -6,8 +6,8 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	%body
-		%header
-			%h1 IX международный симпозиум по радиационной плазмодинамике
+		
+		= render 'layouts/header'
 		%left_bar
 			= render 'layouts/nav'
 		.content
@@ -16,7 +16,7 @@
 			- if flash[:success]
 				%p= flash[:success]
 			= yield
-
+		
 		%footer
 			= language_selector
 			Designed by I-de-ya.

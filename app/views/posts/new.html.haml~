@@ -1,4 +1,4 @@
 # coding: utf-8
-%h1.title Создай-ка новость
+%h1 Создай-ка новость
 = render 'form'
 = link_to "<< Назад, к новостям", posts_path
