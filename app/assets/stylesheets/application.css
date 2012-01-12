@@ -69,6 +69,7 @@ footer {
 	text-align:center;
 	background:#555555;
 	width:18em;
+	border-right: solid 1px;
 }
 
 .nav ul{
