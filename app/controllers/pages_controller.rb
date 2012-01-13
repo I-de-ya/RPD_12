@@ -1,27 +1,27 @@
 # coding: utf-8
 class PagesController < ApplicationController
   def home
-  	@title = "Главная страница"
+  	@title = t(:main_page)
   end
 
   def about
- 		@title = "О конференции"
+ 		@title = t(:about_page)
   end
 
   def org_committee
-  	@title = "Оргкомитет"
+  	@title = t(:org_commitee_page)
   end
 
   def thesis_rules
-  	@title = "Правила оформления тезисов"
+  	@title = t(:thesis_rules_page)
   end
 
   def contacts
-  	@title = "Контакты"
+  	@title = t(:contacts_page)
   end
 
   def registration
-  	@title = "Регистрация участников"
+  	@title = t(:registration_page)
   end
 
   def tasks

@@ -2,7 +2,8 @@
 class SpeechesController < ApplicationController
   
   def index
-  	@speeches = Speech.all
+  	@title = t(:speeches_management_page)
+    @speeches = Speech.all
   end
   
   def new
@@ -10,7 +11,8 @@ class SpeechesController < ApplicationController
   end
 
 	def new_entry_form # Создание новой формы заявки
-		@speech = Speech.new
+		@title = t(:registration_page)
+    @speech = Speech.new
 	end
 
   def create
@@ -25,7 +27,8 @@ class SpeechesController < ApplicationController
 	def create_entry_form # Создание новой заявки
   	@speech = Speech.new(params[:speech])
   	if @speech.save
-  		redirect_to :action => :congrats
+      flash[:notice] = 'Ваша заявка принята.'
+  		redirect_to :controller => :pages, :action => :thesis_rules
   	else
   		render :action => "new_entry_form"
   	end
@@ -35,11 +38,13 @@ class SpeechesController < ApplicationController
 	end
 
   def show
-  	@speech = Speech.find(params[:id])
+  	@title = "Текущий доклад"
+    @speech = Speech.find(params[:id])
   end
 
   def edit
-  	@speech = Speech.find(params[:id])
+  	@title = "Редактирование доклада"
+    @speech = Speech.find(params[:id])
   end
 
   def update

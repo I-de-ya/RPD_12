@@ -2,15 +2,18 @@
 class PostsController < ApplicationController
 
   def index
-  	@posts = Post.all
+  	@title = t(:news_management_page)
+    @posts = Post.all
   end
   
   def news_page
-  	@posts = Post.all
+  	@title = t(:main_page)
+    @posts = Post.all
   end
   
   def new
-  	@post = Post.new
+  	@title = "Создание новости"
+    @post = Post.new
   end
 
   def create
@@ -23,11 +26,13 @@ class PostsController < ApplicationController
   end
 
   def show
-  	@post = Post.find(params[:id])
+  	@title = "Текущая новость"
+    @post = Post.find(params[:id])
   end
 
   def edit
-  	@post = Post.find(params[:id])
+  	@title = "Редактирование новости"
+    @post = Post.find(params[:id])
   end
 
   def update

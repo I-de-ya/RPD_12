@@ -1,9 +1,11 @@
-
 ru:
   hello: "Привет, мир!"
   main_page: "Главная страница"
   about_page: "О симпозиуме"
-  org_commitee_page: "Оргкомитет"
+  org_commitee_page: "Организационный комитет"
   thesis_rules_page: "Правила оформления тезисов"
   contacts_page: "Контакты с организаторами"
   registration_page: "Регистрация заявок на участие"
+  header_title: "IX международный симпозиум по радиационной плазмодинамике"
+  news_management_page: "Редактирование новостей"
+  speeches_management_page: "Редактирование докладов"

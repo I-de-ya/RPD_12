@@ -11,6 +11,7 @@
 		%left_bar
 			= render 'layouts/nav'
 		.content
+			%h1.title= @title
 			- if flash[:notice]
 				%p= flash[:notice]
 			- if flash[:success]
@@ -19,4 +20,4 @@
 		
 		%footer
 			= language_selector
-			Designed by I-de-ya.
+			| Designed by I-de-ya.

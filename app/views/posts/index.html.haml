@@ -1,16 +1,15 @@
-%h1.title Свежайшие новости
-= link_to "Создать новость посвежее", new_post_path
+= link_to "Создать новость", new_post_path
 %table
 	%tr
-		%th Заголовок новости
+		%th Заголовок
 		%th Тело новости
 		%th
 		%th
 		%th
 	- @posts.each do |post|
 		%tr
-			%td= post.title 
+			%td= post.title
 			%td= truncate(post.body)
-			%td= link_to "Показать сию новость ближе", post_path(post)
-			%td= link_to "Отредактировать сию новость", edit_post_path(post)
-			%td= link_to "Удалить новость", post, :confirm => 'Вы уверены?', :method => :delete
+			%td= link_to "Показать", post_path(post)
+			%td= link_to "Редактировать", edit_post_path(post)
+			%td= link_to "Удалить", post, :confirm => 'Вы уверены?', :method => :delete

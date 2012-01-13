@@ -1,4 +1,3 @@
-%h1.title Текущий доклад
 %table
 	%tr
 		%td
@@ -24,4 +23,5 @@
 		%td
 			%B Подписан ли на рассылку новостей
 		%td= @speech.delivery_subscription ? 'Да' : 'Нет'
-= link_to "<< Го к списку докладов", speeches_path
+%p= link_to "Редактировать", edit_speech_path
+%p= link_to "<< Назад, к списку докладов", speeches_path

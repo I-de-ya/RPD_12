@@ -1,11 +1,11 @@
-%h1.title Текущая новость
 %table
 	%tr
 		%td
-			%B Название
+			%B Заголовок
 		%td= @post.title
 	%tr
 		%td
-			%B Сама новость
+			%B Тело новости
 		%td= @post.body
-= link_to "<< Го к списку новостей", posts_path
+= link_to "Редактировать", edit_post_path
+%p= link_to "<< Назад, к списку новостей", posts_path

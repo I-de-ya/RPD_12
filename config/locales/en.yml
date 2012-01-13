@@ -4,8 +4,11 @@
 en:
   hello: "Hello world"
   main_page: "Main page"
-  about_page: "About"
+  about_page: "About symposium"
   org_commitee_page: "Organisation committee"
   thesis_rules_page: "Thesis rules(?)"
   contacts_page: "Contacts"
   registration_page: "Registration"
+  header_title: "IX International Symposium on Radiation Plasmadynamics"
+  news_management_page: "Новости"
+  speeches_management_page: "Доклады"
