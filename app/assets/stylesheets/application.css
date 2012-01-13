@@ -14,15 +14,13 @@ body {
 	min-width:700px;
 	width: 90%;
 	margin: 0.5em auto;
-	background: #DFDFDF;
+	background: black url(body.jpg) repeat-x center top;
 	border: solid 1px;
 }
 header {
 	padding: 0 6em 1.8em 6em;
 	text-align:center;
 	color: white;
-	background: #2D2D2D url(header.jpg) repeat-x center;
-	border-bottom: solid 1px black;
 }
 
 .maintitle {
@@ -40,13 +38,19 @@ left_bar {
 	float: left;
 	width: 19em;
 }
-
+.main{
+	background: #381F58;
+	margin-left:19em;
+	border-top: solid 1px #E0C7FF;
+}
 .content {
-	margin-left:20em;
+	margin-top:-1px;
+	margin-left:1em;
 	background: white;
-	min-height:25em;
+	min-height:40em;
 	padding: 0 1em 0 1em; 
 	border-left: solid 1px;
+	border-top: solid 1px;
 }
 
 .title {
@@ -54,10 +58,8 @@ left_bar {
 	color:white;
 	background: #381F58;
 	padding: 0.5em;
-	margin: 0 1em 0 1em;
-	border-bottom: solid 1px black;
-	border-right: solid 1px black;
-	border-left: solid 1px black;
+	margin: -1px 1em 0 1em;
+	border: solid 1px black;
 }
 
 footer {
@@ -71,11 +73,11 @@ footer {
  /* Navigation */
 
 .nav {
-	padding:1em 0em 1em 1em;
+	padding:0em 0em 1em 1em;
 	text-align:center;
-	background:#381F58;
 	width:18em;
-	border-right: solid 1px;
+	border-right: solid 1px #E0C7FF;
+	min-height:39em;
 }
 
 .nav ul{
@@ -88,10 +90,10 @@ footer {
 	width:18em;
 	margin-bottom:1em;
 	list-style-type:none;
-	background: #DFDFDF;
-	border-top: 1.5px solid;
-	border-bottom: 1.5px solid;
-	border-left: 1.5px solid;
+	background: #381F58;
+	border-top: 1.5px solid #E0C7FF;
+	border-bottom: 1.5px solid #E0C7FF;
+	border-left: 1.5px solid #E0C7FF;
 }
 .nav li a{
 	display: block;
@@ -100,16 +102,16 @@ footer {
 }
 
 .nav li a:link{
-	color: #231A2F;
+	color: white;
 }
 
 .nav li a:visited{
-	color: #231A2F;
+	color: white;
 }
 
 .nav li a:hover{
 	text-decoration:underline;
-	color: #381F58;
+	color: white;
 }
 
 .nav li a:active{
