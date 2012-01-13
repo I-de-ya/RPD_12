@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107150227) do
+ActiveRecord::Schema.define(:version => 20120113204710) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20111107150227) do
     t.boolean  "delivery_subscription"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.boolean  "admin"
   end
 
 end

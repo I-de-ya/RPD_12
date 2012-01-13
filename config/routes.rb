@@ -23,6 +23,7 @@ RPD12::Application.routes.draw do
   match '/tasks', :to => 'pages#tasks'
  
   scope "(:locale)", :locale => /ru|en/ do
+    resources :users
     resources :pages
     resources :posts
     resources :speeches
