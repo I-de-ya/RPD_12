@@ -32,6 +32,8 @@ header {
 	border-bottom: solid 1px black;
 	border-right: solid 1px black;
 	border-left: solid 1px black;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 left_bar {
@@ -93,6 +95,8 @@ footer {
 	border-top: 1.5px solid #E0C7FF;
 	border-bottom: 1.5px solid #E0C7FF;
 	border-left: 1.5px solid #E0C7FF;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
 }
 .nav li a{
 	display: block;
