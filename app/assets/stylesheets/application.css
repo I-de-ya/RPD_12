@@ -41,7 +41,7 @@ left_bar {
 	width: 19em;
 }
 .main{
-	background: #CFB5FF;
+	background: #E6D8FF;
 	margin-left:19em;
 	border-top: solid 1px black;
 	border-left: solid 1px black;
@@ -91,7 +91,7 @@ footer {
 	width:18em;
 	margin-bottom:1em;
 	list-style-type:none;
-	background: #CFB5FF;
+	background: #E6D8FF;
 	border-top: 1.5px solid black;
 	border-bottom: 1.5px solid black;
 	border-left: 1.5px solid black;
