@@ -18,15 +18,15 @@ body {
 	border: solid 1px;
 }
 header {
-	padding: 0 6em 1.8em 6em;
+	padding: 0 6em 1em 6em;
 	text-align:center;
 	color: white;
 }
 
 .maintitle {
+	text-align:center;
 	margin-top:0;
 	padding:0.1em 0 0.1em 0;
-	text-align:center;
 	background: white;
 	color: black;
 	border-bottom: solid 1px black;
@@ -42,6 +42,8 @@ left_bar {
 	background: #381F58;
 	margin-left:19em;
 	border-top: solid 1px #E0C7FF;
+	border-left: solid 1px #E0C7FF;
+	border-bottom: solid 1px #E0C7FF;
 }
 .content {
 	margin-top:-1px;
@@ -76,8 +78,7 @@ footer {
 	padding:0em 0em 1em 1em;
 	text-align:center;
 	width:18em;
-	border-right: solid 1px #E0C7FF;
-	min-height:39em;
+	min-height:40em;
 }
 
 .nav ul{
