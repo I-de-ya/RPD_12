@@ -43,8 +43,8 @@ left_bar {
 .main{
 	background: #B4ADEE;
 	margin-left:19em;
-	border-top: solid 1px black;
-	border-left: solid 1px black;
+	border-top: solid 2px black;
+	border-left: solid 2px black;
 	border-bottom: solid 1px #E0C7FF;
 }
 .content {
@@ -92,9 +92,9 @@ footer {
 	margin-bottom:1em;
 	list-style-type:none;
 	background: #B4ADEE;
-	border-top: 1.5px solid black;
-	border-bottom: 1.5px solid black;
-	border-left: 1.5px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
 }
