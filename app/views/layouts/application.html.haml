@@ -9,16 +9,15 @@
 		
 		= render 'layouts/header'
 		%left_bar
-			= render 'layouts/nav'
-		.main	
-			.content
-				%h2.title= @title
-				%hr
-				- if flash[:notice]
-					%p= flash[:notice]
-				- if flash[:success]
-					%p= flash[:success]
-				= yield
+			= render 'layouts/nav'	
+		.content
+			%h2.title= @title
+			%hr
+			- if flash[:notice]
+				%p= flash[:notice]
+			- if flash[:success]
+				%p= flash[:success]
+			= yield
 		
 		%footer
 			= language_selector

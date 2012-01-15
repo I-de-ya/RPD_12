@@ -7,22 +7,25 @@
 */
 html {
 	background: #DFDFDF;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Europe Normal, Verdana, Helvetica, Arial, sans-serif;
 }
 
 body {
-	min-width:700px;
+	min-width:800px;
 	width: 90%;
 	margin: 0.5em auto;
-	background: black url(body.jpg) repeat-x center top;
+	background: black url(body.png) repeat-x center top;
 	border: solid 1px;
 }
 header {
-	padding: 0 6em 1em 6em;
+	padding: 0 6em 15px 6em;
 	text-align:center;
 	color: white;
+	height:120px;
 }
-
+hr.menu_line {
+	height: 0px;
+}
 .maintitle {
 	text-align:center;
 	margin-top:0;
@@ -34,24 +37,19 @@ header {
 	border-left: solid 1px black;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
+	min-width:40em;
 }
 
 left_bar {
 	float: left;
 	width: 19em;
+	border-top: solid 1px black;
 }
-.main{
-	background: #B4ADEE;
-	margin-left:19em;
-	border-top: solid 2px black;
-	border-left: solid 2px black;
-	border-bottom: solid 1px #E0C7FF;
-}
+
 .content {
-	margin-top:-1px;
-	margin-left:1em;
+	margin-left:20em;
 	background: white;
-	min-height:40.5em;
+	min-height:30em;
 	padding: 0 1em 0 1em; 
 	border-left: solid 1px;
 	border-top: solid 1px;
@@ -61,7 +59,7 @@ left_bar {
 	text-align:center;
 	color:black;
 	background: white;
-	margin: 0.5em 1em 0 1em;
+	margin: 0.5em 1em 0.5em 1em;
 }
 
 footer {
@@ -69,16 +67,16 @@ footer {
 	background:white;
 	clear:both;
 	text-align:right;
-	padding: 0.5em 0 0.5em 0;
+	padding: 0.2em 0 0.2em 0;
 }
 
  /* Navigation */
 
 .nav {
-	padding:0em 0em 1em 1em;
-	text-align:center;
+	margin-left:1em;
+	margin-top:1em;
 	width:18em;
-	min-height:40em;
+	text-align:left;
 }
 
 .nav ul{
@@ -86,35 +84,27 @@ footer {
 	padding:0;
 }
 .nav li{
-	padding-top:1em;
-	padding-bottom:1em;
-	width:18em;
-	margin-bottom:1em;
+	
 	list-style-type:none;
-	background: #B4ADEE;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
-	border-left: 2px solid black;
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
+	padding:0.3em 0 0.3em 0.3em;
+	width:18em;
 }
 .nav li a{
 	display: block;
 	text-decoration:none;	
-	font-size:12pt;
+	font-size:10pt;
 }
 
 .nav li a:link{
-	color: black;
+	color: white;
 }
 
 .nav li a:visited{
-	color: black;
+	color: white;
 }
 
 .nav li a:hover{
-	text-decoration:underline;
-	color: black;
+	color: #DCCCF7;
 }
 
 .nav li a:active{
