@@ -10,14 +10,13 @@ class UsersController < ApplicationController
     	@user = User.new(params[:user])
     	
     	if @user.save
-      		redirect_to @user
+    		sign_in @user
+    		flash[:success] = "Приветствуем!"
+      		redirect_to :controller => 'posts', :action => 'news_page'
     	else
       		@title = "Зарегистрироваться"
       		render 'new'
     	end
   	end
 
-	def sign_in
-		@title = "Войти"
-	end
 end

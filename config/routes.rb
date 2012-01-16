@@ -1,5 +1,7 @@
 RPD12::Application.routes.draw do
 	
+  get "sessions/new"
+
 	post "speeches/create_entry_form"
 	
 	get 'speeches/congrats'
@@ -27,6 +29,7 @@ RPD12::Application.routes.draw do
     resources :pages
     resources :posts
     resources :speeches
+    resources :sessions, :only =>[:new,:create,:destroy]
   end
 
   match '/:locale' => 'posts#news_page'
