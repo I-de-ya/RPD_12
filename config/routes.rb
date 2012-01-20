@@ -29,8 +29,11 @@ RPD12::Application.routes.draw do
     resources :pages
     resources :posts
     resources :speeches
-    resources :sessions, :only =>[:new,:create,:destroy]
+    resource :session, :only =>[:new,:create,:destroy]
   end
+
+  match "/login" => "sessions#new", :as => "login"
+  match "/logout" => "sessions#destroy", :as => "logout"
 
   match '/:locale' => 'posts#news_page'
   root :to => "posts#news_page"
