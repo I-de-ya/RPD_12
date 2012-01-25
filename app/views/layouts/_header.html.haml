@@ -1,3 +1,7 @@
 %header
-	.maintitle
-		%h1.white= t(:header_title)
+	.top_panel
+		= form_tag root_path, :method => 'get' do
+			= text_field_tag :search
+			= text_field_tag :search
+			= submit_tag "Войти"
+
