@@ -20,7 +20,7 @@ RPD12::Application.routes.draw do
   get "pages/contacts"
 	match '/contacts', :to => 'pages#contacts'
   get "pages/registration"
-  match '/registration', :to => 'speeches#new_entry_form'
+  match '/registration', :to => 'users#new'
   get "pages/tasks"
   match '/tasks', :to => 'pages#tasks'
  

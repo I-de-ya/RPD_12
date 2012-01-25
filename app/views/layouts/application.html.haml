@@ -6,7 +6,6 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	%body
-		
 		= render 'layouts/header'
 		%left_bar
 			= render 'layouts/nav'	
@@ -18,7 +17,6 @@
 			- if flash[:success]
 				%p= flash[:success]
 			= yield
-		
 		%footer
 			= language_selector
 			| Designed by I-de-ya.
