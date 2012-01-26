@@ -1,14 +1,16 @@
 class User < ActiveRecord::Base
 	has_one :speech
 
+	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
 	attr_accessor :password
-	attr_accessible :name, :password, :password_confirmation
+	attr_accessible :email, :password, :password_confirmation
 
 	validates :password, :presence	 => true,
 						 :confirmation => true,
 						 :length => {:within => 6..40}
-	validates :name, :presence => true,
-					 :length => { :maximum => 50}
+	validates :email, :presence => true,
+					  :format => {:with => email_regex}
 
 	before_save :encrypt_password
 
@@ -16,8 +18,8 @@ class User < ActiveRecord::Base
 		encrypted_password == encrypt(submitted_password)
 	end
 
-	def self.authenticate(name,submitted_password)
-		user = find_by_name(name)
+	def self.authenticate(email,submitted_password)
+		user = find_by_email(email)
 		return nil if user.nil?
 		return user if user.has_password?(submitted_password)
 	end

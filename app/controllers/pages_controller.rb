@@ -20,8 +20,8 @@ class PagesController < ApplicationController
   	@title = t(:contacts_page)
   end
 
-  def registration
-  	@title = t(:registration_page)
+  def signup
+  	@title = t(:signup_page)
   end
 
   def tasks

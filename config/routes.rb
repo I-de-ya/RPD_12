@@ -19,21 +19,23 @@ RPD12::Application.routes.draw do
 	match '/thesis_rules', :to => 'pages#thesis_rules'
   get "pages/contacts"
 	match '/contacts', :to => 'pages#contacts'
-  get "pages/registration"
-  match '/registration', :to => 'users#new'
+  get "pages/signup"
+  match '/signup', :to => 'users#new'
   get "pages/tasks"
   match '/tasks', :to => 'pages#tasks'
- 
+  
+  match '/registration', :to => 'speeches#new_entry_form'
+
   scope "(:locale)", :locale => /ru|en/ do
     resources :users
     resources :pages
     resources :posts
     resources :speeches
-    resource :session, :only =>[:new,:create,:destroy]
+    resources :sessions, :only => [:new, :create, :destroy]
   end
 
-  match "/login" => "sessions#new", :as => "login"
-  match "/logout" => "sessions#destroy", :as => "logout"
+  match "/signin" => "sessions#new", :as => "signin"
+  match "/signout" => "sessions#destroy", :as => "signout"
 
   match '/:locale' => 'posts#news_page'
   root :to => "posts#news_page"

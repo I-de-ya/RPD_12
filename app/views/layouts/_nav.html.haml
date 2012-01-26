@@ -11,9 +11,11 @@
 			%hr.menu_line
 			%li= link_to t(:contacts_page), contacts_path
 			%hr.menu_line
-			%li= link_to t(:registration_page), registration_path
+			%li= link_to t(:signup_page), signup_path
 			%hr.menu_line			
-			%li= link_to t(:signin_page), '#'
+			%li= link_to t(:signin_page), signin_path
+			%hr.menu_line
+			%li= link_to "Выйти", signout_path, :method => :delete
 			%hr.menu_line
 		- if Rails.env.development?
 			%li

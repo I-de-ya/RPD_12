@@ -1,7 +1,8 @@
 = form_for(@user) do |f|
   .field
-    = f.label :name, "Имя"
-    = f.text_field :name
+    = f.label :email, "Электронная почта" 
+    = f.text_field :email
+  Необходим для связи организаторов с вами, а также для личного входа на сайт
   .field
     = f.label :password, "Пароль"
     = f.password_field :password

@@ -63,6 +63,23 @@ footer {
 	text-align:right;
 	padding: 0.2em 0 0.2em 0;
 }
+/* Top panel navigation */
+
+.top_panel a:link{
+	color: white;
+}
+
+.top_panel a:visited{
+	color: white;
+}
+
+.top_panel a:hover{
+	color: #DCCCF7;
+}
+
+.top_panel a:active{
+	color: red;
+}
 
  /* Navigation */
 

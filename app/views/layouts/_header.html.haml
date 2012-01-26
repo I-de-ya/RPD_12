@@ -1,7 +1,24 @@
 %header
 	.top_panel
-		= form_tag root_path, :method => 'get' do
-			= text_field_tag :search
-			= text_field_tag :search
-			= submit_tag "Войти"
-
+		- if signed_in?
+			= current_user.email
+			|
+			= link_to "Заботы разработчика", tasks_path
+			|
+			= link_to t(:news_management_page), posts_path
+			|
+			= link_to t(:speeches_management_page), speeches_path
+			|
+			= link_to "Заявка на участие", registration_path
+			|
+			= link_to "Выйти", signout_path, :method => :delete
+			|
+		- else
+			= form_for(:session, :url => sessions_path) do |f|
+				= f.label :email
+				= f.text_field :email
+				= f.label :password
+				= f.password_field :password
+				= f.submit "Войти"
+				|
+				= link_to "Зарегистрироваться", signup_path

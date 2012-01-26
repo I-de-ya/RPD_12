@@ -1,11 +1,11 @@
-=form_for(:session, :url => session_path) do |f|
+= form_for(:session, :url => sessions_path) do |f|
 	.field
-		= f.label :name
-		= f.text_field :name
+		= f.label :email
+		= f.text_field :email
 	.field
 		= f.label :password
 		= f.password_field :password
 	.actions
 		= f.submit "Войти"
 %p Не зарегистрированы?
-= link_to "Зарегистрируйтесь!", login_path
+= link_to "Зарегистрируйтесь!", registration_path

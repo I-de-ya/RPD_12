@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	
 	def new
 		@user = User.new
-		@title = "Зарегистрироваться"
+		@title = t(:registration_page)
 	end
 
 	def create
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     	
     	if @user.save
     		sign_in @user
-    		flash[:success] = "Приветствуем!"
+    		flash[:success] = "Приветствуем, Гость!"
       		redirect_to :controller => 'posts', :action => 'news_page'
     	else
       		@title = "Зарегистрироваться"
