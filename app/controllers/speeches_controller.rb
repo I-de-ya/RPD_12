@@ -27,6 +27,7 @@ class SpeechesController < ApplicationController
 	def create_entry_form # Создание новой заявки
   	@title = t(:registration_page)
     @speech = Speech.new(params[:speech])
+    @speech.user_id = current_user.id
   	if @speech.save
       flash[:notice] = 'Ваша заявка принята.'
   		redirect_to :controller => :pages, :action => :thesis_rules

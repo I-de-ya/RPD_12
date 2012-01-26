@@ -1,9 +1,14 @@
 # coding: utf-8
 class UsersController < ApplicationController
 	
+  def index
+    @title = "Пользователи"
+    @users = User.all
+  end
+
 	def new
 		@user = User.new
-		@title = t(:registration_page)
+		@title = t(:signup_page)
 	end
 
 	def create

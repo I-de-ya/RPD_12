@@ -5,12 +5,23 @@
 			|
 			= link_to "Заботы разработчика", tasks_path
 			|
-			= link_to t(:news_management_page), posts_path
-			|
-			= link_to t(:speeches_management_page), speeches_path
-			|
-			= link_to "Заявка на участие", registration_path
-			|
+			- if current_user.admin?
+				= link_to t(:news_management_page), posts_path
+				|
+				= link_to t(:speeches_management_page), speeches_path
+				|
+				= link_to "Настройка прав доступа", users_path
+				|
+			- else
+				- if current_user.speech == nil
+					= link_to "Заявка на участие", registration_path
+					|
+				- else
+					= link_to "Заявка", "#"
+					|
+					= link_to "Отправить тезисы", "#"
+					|
+					= link_to "Оплата", "#"
 			= link_to "Выйти", signout_path, :method => :delete
 			|
 		- else

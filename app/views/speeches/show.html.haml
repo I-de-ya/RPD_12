@@ -18,7 +18,7 @@
 	%tr
 		%td
 			%B Контактный e-mail
-		%td= @speech.email
+		%td= @speech.user.nil? ? "-" : @speech.user.email
 	%tr
 		%td
 			%B Подписан ли на рассылку новостей
