@@ -4,9 +4,6 @@ RPD12::Application.routes.draw do
 
 	post "speeches/create_entry_form"
 	
-	get 'speeches/congrats'
-	match '/congrats', :to => 'speeches#congrats'
-	
 	get "pages/home"
   match '/home', :to => 'posts#news_page'
   get "pages/home"

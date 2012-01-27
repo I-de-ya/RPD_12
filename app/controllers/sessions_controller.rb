@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   		render 'new'
   	else
   		sign_in user
-  		redirect_to :controller => 'posts', :action => 'news_page'
+  		redirect_back_or root_path
   	end
   end
 

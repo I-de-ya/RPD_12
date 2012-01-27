@@ -1,5 +1,7 @@
 # coding: utf-8
 class PostsController < ApplicationController
+  before_filter :authenticate
+  before_filter :admin_user, :except => [:news_page]
 
   def index
   	@title = t(:news_management_page)
@@ -53,5 +55,4 @@ class PostsController < ApplicationController
   	flash[:success] = "Новость была удалена."
   	redirect_to posts_path
   end
-
 end

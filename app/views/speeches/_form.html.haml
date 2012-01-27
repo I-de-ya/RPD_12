@@ -14,12 +14,11 @@
 		= f.label :phone, "Контактный телефон"
 	%p	
 		= f.text_field :phone
+	- if current_user.admin?	
+		%p= f.label :email, "Контактный e-mail"
+		%p= f.text_field :email
 	%p
-		= f.label :email, "Контактный e-mail"
-	%p	
-		= f.text_field :email
-	%p
-		= f.label :delivery_subscription, "Подписать ли на рассылку новостей"
+		= f.label :delivery_subscription, "Подписка на рассылку новостей"
 	%p	
 		= f.check_box :delivery_subscription
 	= f.submit "Подтвердить"

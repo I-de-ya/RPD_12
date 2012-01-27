@@ -9,19 +9,21 @@
 		%td= @speech.organization
 	%tr
 		%td
-			%B Автор
+			%B ФИО авторов
 		%td= @speech.author_name	
 	%tr
 		%td
 			%B Контактный телефон
-		%td= @speech.phone	
+		%td= @speech.phone
 	%tr
 		%td
 			%B Контактный e-mail
 		%td= @speech.user.nil? ? "-" : @speech.user.email
 	%tr
 		%td
-			%B Подписан ли на рассылку новостей
+			%B Подписка на рассылку новостей
 		%td= @speech.delivery_subscription ? 'Да' : 'Нет'
 %p= link_to "Редактировать", edit_speech_path
-%p= link_to "<< Назад, к списку докладов", speeches_path
+%p
+- if current_user.admin?
+	= link_to "<< Назад, к списку докладов", speeches_path

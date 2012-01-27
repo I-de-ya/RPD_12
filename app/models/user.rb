@@ -4,14 +4,15 @@ class User < ActiveRecord::Base
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 	attr_accessor :password
-	attr_accessible :email, :password, :password_confirmation
+	attr_accessible :name, :email, :password, :password_confirmation
 
 	validates :password, :presence	 => true,
 						 :confirmation => true,
 						 :length => {:within => 6..40}
 	validates :email, :presence => true,
 					  :format => {:with => email_regex}
-
+					  #:uniqueness
+					  
 	before_save :encrypt_password
 
 	def has_password?(submitted_password)

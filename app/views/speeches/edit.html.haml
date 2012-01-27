@@ -1,2 +1,4 @@
 = render 'form'
-= link_to '<< К списку докладов', speeches_path
+%p= link_to 'Назад', speech_path(current_user.speech)
+- if current_user.admin?
+	%p= link_to '<< К списку докладов', speeches_path

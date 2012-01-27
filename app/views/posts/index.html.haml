@@ -3,6 +3,7 @@
 	%tr
 		%th Заголовок
 		%th Тело новости
+		%th Дата публикации
 		%th
 		%th
 		%th
@@ -10,6 +11,7 @@
 		%tr
 			%td= post.title
 			%td= truncate(post.body)
+			%td= post.created_at.strftime("%d-%m-%Y")
 			%td= link_to "Показать", post_path(post)
 			%td= link_to "Редактировать", edit_post_path(post)
 			%td= link_to "Удалить", post, :confirm => 'Вы уверены?', :method => :delete

@@ -1,6 +1,9 @@
 # coding: utf-8
 class SpeechesController < ApplicationController
-  
+  before_filter :authenticate
+  before_filter :correct_user, :only => [:edit, :update, :show]
+  before_filter :admin_user, :only => [:new, :create, :index, :delete, :destroy]
+
   def index
   	@title = t(:speeches_management_page)
     @speeches = Speech.all
@@ -36,23 +39,20 @@ class SpeechesController < ApplicationController
   	end
   end
 
-	def congrats
-	end
-
   def show
-  	@title = "Текущий доклад"
+  	@title = current_user.admin? ? "Текущий доклад" : "Заявка"
     @speech = Speech.find(params[:id])
   end
 
   def edit
-  	@title = "Редактирование доклада"
+  	@title = current_user.admin? ? "Редактирование доклада" : "Редактирование заявки"
     @speech = Speech.find(params[:id])
   end
 
   def update
   	@speech = Speech.find(params[:id])
   	if @speech.update_attributes(params[:post])
-  		redirect_to @speech, :notice => 'Доклад был успешно обновлен.'
+  		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно обновлен.' : 'Заявка была успешно обновлена'
   	else
   		render :action => "edit"
   	end
@@ -68,4 +68,9 @@ class SpeechesController < ApplicationController
   	redirect_to speeches_path
   end
 
+  private
+    def correct_user
+      @user = Speech.find(params[:id]).user
+      redirect_to(root_path) unless (current_user?(@user) || current_user.admin?)
+    end
 end

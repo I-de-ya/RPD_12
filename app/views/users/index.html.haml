@@ -1,8 +1,10 @@
 %table
 	%tr
+		%th Имя
 		%th Адрес электронной почты
 		%th Права администратора
 	- @users.each do |user|
 		%tr
+			%td= user.name.nil? ? "-" : user.name
 			%td= user.email
 			%td= user.admin ? "Есть" : "Нет"

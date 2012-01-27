@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'russian', '~> 0.6.0'
 gem 'haml'
 gem 'dynamic_form'
-
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
