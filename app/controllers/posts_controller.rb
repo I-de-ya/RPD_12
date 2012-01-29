@@ -1,6 +1,6 @@
 # coding: utf-8
 class PostsController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:news_page]
   before_filter :admin_user, :except => [:news_page]
 
   def index

@@ -1,6 +1,6 @@
 # coding: utf-8
 class UsersController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, :only => [:index]
 	before_filter :admin_user, :only => [:index]
   def index
     @title = "Пользователи"

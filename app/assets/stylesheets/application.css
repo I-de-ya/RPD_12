@@ -57,7 +57,7 @@ left_bar {
 	margin-left:20em;
 	background: white;
 	min-height:30em;
-	padding: 0 1em 1em 1em; 
+	padding: 0 1em 0 1; 
 	border-left: solid 1px;
 	border-top: solid 1px;
 }
@@ -68,7 +68,15 @@ left_bar {
 	background: white;
 	margin: 0.5em 1em 0.5em 1em;
 }
-
+.status_panel {
+	float:right;
+	border-left: solid black 1px;
+	border-bottom: solid black 1px;
+	padding: 0.5em;
+}
+.main {
+	margin: 1em 1em 1em 1em;
+}
 footer {
 	border-top:solid 1px black;
 	background:white;
