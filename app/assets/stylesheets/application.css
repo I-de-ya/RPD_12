@@ -45,7 +45,7 @@ hr.menu_line {
 }
 .top_panel {
 	text-align: right;
-	padding:0.5em 2em 0.5em 0;
+	padding:0.5em 1em 0.5em 0;
 }
 left_bar {
 	float: left;
@@ -106,7 +106,7 @@ footer {
 
 .nav {
 	margin-left:1em;
-	margin-top:1em;
+	margin-top:20px;
 	width:18em;
 	text-align:left;
 }
