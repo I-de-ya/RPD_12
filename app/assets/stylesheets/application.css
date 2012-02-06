@@ -73,6 +73,7 @@ left_bar {
 	border-left: solid black 1px;
 	border-bottom: solid black 1px;
 	padding: 0.5em;
+	background:#D4CFD8;
 }
 .main {
 	margin: 1em 1em 1em 1em;
