@@ -13,17 +13,7 @@
 			%hr.menu_line
 			%li= link_to t(:signup_page), signup_path
 			%hr.menu_line			
-			%li= link_to t(:signin_page), signin_path
-			%hr.menu_line
-			%li= link_to "Выйти", signout_path, :method => :delete
-			%hr.menu_line
 		- if Rails.env.development?
 			%li
 				%B= link_to "Заботы разработчика", tasks_path
-			%hr.menu_line
-			%li
-				%B= link_to t(:news_management_page), posts_path
-			%hr.menu_line
-			%li
-				%B= link_to t(:speeches_management_page), speeches_path
 			%hr.menu_line
