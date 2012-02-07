@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     	if @user.save
     		sign_in @user
     		flash[:success] = "Приветствуем, Гость!"
-      		redirect_to :controller => 'posts', :action => 'news_page'
+      		redirect_to :controller => 'speeches', :action => 'new_entry_form'
     	else
       		@title = "Зарегистрироваться"
       		render 'new'
