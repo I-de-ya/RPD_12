@@ -7,13 +7,12 @@
 		= csrf_meta_tags
 	%body
 		= render 'layouts/header'
+		= render 'layouts/status_panel'
 		%left_bar
-			= render 'layouts/nav'	
+			= render 'layouts/nav'
+
 		.content
-			- if signed_in? 
-				= render 'layouts/status_panel'
 			%h2.title= @title
-			%hr
 			- if flash[:notice]
 				%p= flash[:notice]
 			- if flash[:success]

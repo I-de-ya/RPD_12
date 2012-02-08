@@ -24,7 +24,6 @@
 					= link_to "Оплата", "#"
 					|
 			= link_to "Выйти", signout_path, :method => :delete
-			|
 		- else
 			= form_for(:session, :url => sessions_path) do |f|
 				= f.label :email

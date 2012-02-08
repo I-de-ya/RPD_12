@@ -1,6 +1,7 @@
 - @posts.each do |post|
-	
-	%h2= post.title
-	= post.body
-	%p=post.created_at.strftime("%d-%m-%Y")
+
 	%hr
+	%h3= post.title
+	= post.body
+	%p.date
+		%i= post.created_at.strftime("%d-%m-%Y")
