@@ -1,13 +1,17 @@
-= form_for(@user) do |f|
-  .field
-    = f.label :email, "Электронная почта" 
-    = f.text_field :email
-  Необходим для связи организаторов с вами, а также для личного входа на сайт
-  .field
-    = f.label :password, "Пароль"
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation, "Подтверждение пароля"
-    = f.password_field :password_confirmation
-  .actions
-    = f.submit "Зарегистрироваться"
+Регистрация необходима для связи организаторов с вами, а также для личного входа на сайт
+%p
+  = form_for(@user) do |f|
+    .field
+      = f.label :email, "Электронная почта"
+      %br
+      = f.text_field :email
+    .field
+      = f.label :password, "Пароль"
+      %br
+      = f.password_field :password
+    .field
+      = f.label :password_confirmation, "Подтверждение пароля"
+      %br
+      = f.password_field :password_confirmation
+    .actions
+      = f.submit "Зарегистрироваться"

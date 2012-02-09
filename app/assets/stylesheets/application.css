@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	width:1024px;
+	width:900px;
 	margin: 0 auto;
 	margin-top:0.3em;
 	margin-bottom:0.3em;
@@ -81,7 +81,7 @@ p.date {
 }
 .status_panel {
 	border-top: solid black 1px;
-	background:#381B45;
+	background:#24043A;
 	text-align:center;
 	color:#EBE5ED;
 	padding: 0.2em;
