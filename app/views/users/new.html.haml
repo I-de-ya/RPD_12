@@ -1,17 +1,19 @@
 Регистрация необходима для связи организаторов с вами, а также для личного входа на сайт
-%p
-  = form_for(@user) do |f|
-    .field
-      = f.label :email, "Электронная почта"
-      %br
-      = f.text_field :email
-    .field
-      = f.label :password, "Пароль"
-      %br
-      = f.password_field :password
-    .field
-      = f.label :password_confirmation, "Подтверждение пароля"
-      %br
-      = f.password_field :password_confirmation
-    .actions
-      = f.submit "Зарегистрироваться"
+.rpd_form
+  %fieldset
+    %legend Заполните заявку
+    = form_for(@user) do |f|
+      .field
+        = f.label :email, "Электронная почта"
+        %p
+        = f.text_field :email
+      .field
+        = f.label :password, "Пароль"
+        %p
+        = f.password_field :password
+      .field
+        = f.label :password_confirmation, "Подтверждение пароля"
+        %p
+        = f.password_field :password_confirmation
+      .submit
+        = f.submit "Зарегистрироваться"

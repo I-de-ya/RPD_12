@@ -1,4 +1,8 @@
 # coding: utf-8
 %h1.title Новый доклад
-= render 'form'
+
+.speeches_form
+	%fieldset
+		%legend Заполните заявку
+		= render 'form'
 = link_to "<< Назад, к докладам", speeches_path

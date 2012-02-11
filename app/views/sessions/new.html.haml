@@ -1,11 +1,16 @@
-= form_for(:session, :url => sessions_path) do |f|
-	.field
-		= f.label :email
-		= f.text_field :email
-	.field
-		= f.label :password
-		= f.password_field :password
-	.actions
-		= f.submit "Войти"
-%p Не зарегистрированы?
-= link_to "Зарегистрируйтесь!", registration_path
+.rpd_form
+	%fieldset
+		%legend Введите личные данные
+		= form_for(:session, :url => sessions_path) do |f|
+			.field
+				= f.label :email, "Электронная почта"
+				%p
+				= f.text_field :email
+			.field
+				= f.label :password, "Пароль"
+				%p
+				= f.password_field :password
+			.submit
+				= f.submit "Войти"
+		Не зарегистрированы?
+		= link_to "Зарегистрируйтесь!", registration_path

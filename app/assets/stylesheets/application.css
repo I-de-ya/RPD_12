@@ -7,12 +7,13 @@
 */
 html {
 	background: #EBE5ED;
-	font-family: Europe Normal, Verdana, Helvetica, Arial, sans-serif;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
 	padding:0 0.5em 0 0.5em;
+	font-size:11pt;
 }
 
 body {
-	width:900px;
+	width:1000px;
 	margin: 0 auto;
 	margin-top:0.3em;
 	margin-bottom:0.3em;
@@ -51,9 +52,18 @@ hr.menu_line {
 }
 .top_panel {
 	text-align: right;
-	padding:0.4em 1.7em 0.5em 0;
-	font-size:11pt;
+	font-size:10pt;
 }
+
+.top_panel .top_menu {
+	padding:0.5em 1.7em 0 0;
+}
+
+.top_panel .form {
+	padding:0.2em 1.7em 0 0;
+}
+
+
 left_bar {
 	float: left;
 	width: 19em;
@@ -77,11 +87,11 @@ p.date {
 	text-align:center;
 	color:black;
 	background: white;
-	margin: 0.5em 1em 0.5em 1em;
+	margin: 0.7em 1em 0.7em 1em;
 }
 .status_panel {
-	border-top: solid black 1px;
 	background:#24043A;
+	border-top: solid black 1px;
 	text-align:center;
 	color:#EBE5ED;
 	padding: 0.2em;
@@ -112,7 +122,7 @@ footer {
 }
 
 .top_panel a:active{
-	color: red;
+	color: #E138AA;
 }
 
  /* Navigation */
@@ -153,5 +163,61 @@ footer {
 }
 
 .nav li a:active{
-	color: red;
+	color: #E138AA;
+}
+.top_panel input{
+	background:none;
+	border:solid 1px white;
+	color:white;
+}
+.top_panel input:hover{
+	background:#24043A;
+}
+
+.top_panel input:active{
+	color:#E138AA;
+}
+
+.rpd_form fieldset {
+background: #EBE5ED;
+margin
+}
+.rpd_form legend {
+margin-left:2em;
+color: white;
+background: #24043A;
+padding: 0.2em 1em;
+}
+.rpd_form label {
+width: 18em;
+float: left;
+text-align: right;
+padding-top: 0.2em;
+margin-right: 0.1em;
+display: block;
+}
+.rpd_form input {
+margin-left: 0.5em;
+width:25em;
+}
+
+.rpd_form .submit{
+text-align:right;
+padding-top: 0.7em;
+margin-right: 2em;
+}
+
+.rpd_form .submit input {
+margin-left: 0.5em;
+width:auto;
+}
+
+.rpd_form .check_box label {
+width:auto;
+margin-left:5em;
+}
+
+.rpd_form .check_box input {
+margin-left: 0.5em;
+width:auto;
 }
