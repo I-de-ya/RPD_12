@@ -40,7 +40,7 @@ class SpeechesController < ApplicationController
   end
 
   def show
-  	@title = current_user.admin? ? "Текущий доклад" : "Заявка"
+  	@legend_title = current_user.admin? ? "Текущий доклад" : "Ваша заявка"
     @speech = Speech.find(params[:id])
   end
 
@@ -51,7 +51,7 @@ class SpeechesController < ApplicationController
 
   def update
   	@speech = Speech.find(params[:id])
-  	if @speech.update_attributes(params[:post])
+  	if @speech.update_attributes(params[:speech])
   		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно обновлен.' : 'Заявка была успешно обновлена'
   	else
   		render :action => "edit"

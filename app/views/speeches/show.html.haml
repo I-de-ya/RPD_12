@@ -1,29 +1,33 @@
-%table
-	%tr
-		%td
-			%B Название доклада
-		%td= @speech.title
-	%tr
-		%td
-			%B Организация
-		%td= @speech.organization
-	%tr
-		%td
-			%B ФИО авторов
-		%td= @speech.author_name	
-	%tr
-		%td
-			%B Контактный телефон
-		%td= @speech.phone
-	%tr
-		%td
-			%B Контактный e-mail
-		%td= @speech.user.nil? ? "-" : @speech.user.email
-	%tr
-		%td
-			%B Подписка на рассылку новостей
-		%td= @speech.delivery_subscription ? 'Да' : 'Нет'
-%p= link_to "Редактировать", edit_speech_path
 %p
-- if current_user.admin?
-	= link_to "<< Назад, к списку докладов", speeches_path
+	.rpd_form
+		%fieldset
+			%legend= @legend_title
+			%table
+				%tr
+					%td.right
+						%B Название доклада:
+					%td= @speech.title
+				%tr
+					%td.right
+						%B Организация:
+					%td= @speech.organization
+				%tr
+					%td.right
+						%B ФИО авторов:
+					%td= @speech.author_name	
+				%tr
+					%td.right
+						%B Контактный телефон:
+					%td= @speech.phone
+				%tr
+					%td.right
+						%B Контактный e-mail:
+					%td= @speech.user.nil? ? "-" : @speech.user.email
+				%tr
+					%td.right
+						%B Подписка на рассылку новостей:
+					%td= @speech.delivery_subscription ? 'Да' : 'Нет'
+			%p= link_to "Редактировать", edit_speech_path
+			%p
+			- if current_user.admin?
+				= link_to "<< Назад, к списку докладов", speeches_path

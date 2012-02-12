@@ -17,8 +17,9 @@
 	- if current_user.admin?	
 		%p= f.label :email, "Контактный e-mail"
 		%p= f.text_field :email
-	%p
+	.check_box
 		= f.label :delivery_subscription, "Подписка на рассылку новостей"
-	%p	
-		= f.check_box :delivery_subscription
-	= f.submit "Подтвердить"
+		%p	
+			= f.check_box :delivery_subscription
+	.submit	
+		= f.submit "Подтвердить"
