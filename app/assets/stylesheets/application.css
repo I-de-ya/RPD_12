@@ -67,16 +67,14 @@ hr.menu_line {
 left_bar {
 	float: left;
 	width: 19em;
-	border-top: solid 1px black;
 }
 
 .content {
 	margin-left:20em;
 	background: white;
 	min-height:30em;
-	padding: 0 0.3em 0.3em 0.3em; 
+	padding: 0.3em 0.3em 0.3em 0.3em; 
 	border-left: solid 1px;
-	border-top: solid 1px;
 }
 
 p.date {
@@ -92,6 +90,7 @@ p.date {
 .status_panel {
 	background:#24043A;
 	border-top: solid black 1px;
+	border-bottom: solid black 1px;
 	text-align:center;
 	color:#EBE5ED;
 	padding: 0.2em;
