@@ -1,8 +1,0 @@
-%h1 Главная страница
-- @posts.each do |post|
-	%hr
-	%h2= post.title
-	= post.body
-	%p
-	Новость размещена
-	=post.created_at.strftime("%d-%m-%Y")

@@ -1,4 +1,0 @@
-# coding: utf-8
-%h1 Создай-ка докладик
-= render 'form'
-= link_to "<< Назад, к докладам", speeches_path
