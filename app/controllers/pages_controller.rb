@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def about
  		@title = t(:about_page)
+    @themes = Theme.all
   end
 
   def org_committee

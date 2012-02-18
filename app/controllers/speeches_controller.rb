@@ -16,6 +16,7 @@ class SpeechesController < ApplicationController
 	def new_entry_form # Создание новой формы заявки
 		@title = t(:registration_page)
     @speech = Speech.new
+    @themes = Theme.all
 	end
 
   def create
