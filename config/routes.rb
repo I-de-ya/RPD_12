@@ -27,7 +27,7 @@ RPD12::Application.routes.draw do
     resources :users
     resources :pages
     resources :posts
-    resources :speeches
+    resources :speeches         
     resources :sessions, :only => [:new, :create, :destroy]
   end
 

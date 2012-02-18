@@ -41,6 +41,12 @@ header a{
 	text-decoration:none;	
 }
 
+header .email {
+	float:right;
+	margin:10.5em 2em 0 0;
+	color: #24043A;
+}
+
 hr.menu_line {
 	height: 0px;
 }
@@ -83,7 +89,7 @@ p.date {
 
 .title {
 	text-align:center;
-	color:black;
+	color:#24043A;
 	background: white;
 	margin: 0.7em 1em 0.7em 1em;
 }
@@ -95,6 +101,25 @@ p.date {
 	color:#EBE5ED;
 	padding: 0.2em;
 	font-size:10pt;
+}
+
+.status_panel .red{
+	color:#ef2c5f;
+	text-decoration:none;
+}
+
+.status_panel .green{
+	color:#20f120;
+	text-decoration:none;
+}
+.status_panel .red:hover{
+	color:#ef2c5f;
+	text-decoration:underline;
+}
+
+.status_panel .green:hover{
+	color:#20f120;
+	text-decoration:underline;
 }
 .main {
 	margin: 1em 1em 1em 1em;
@@ -118,10 +143,6 @@ footer {
 
 .top_panel a:hover{
 	color: #DCCCF7;
-}
-
-.top_panel a:active{
-	color: #E138AA;
 }
 
  /* Navigation */
@@ -161,25 +182,19 @@ footer {
 	color: #DCCCF7;
 }
 
-.nav li a:active{
-	color: #E138AA;
-}
 .top_panel input{
-	background:none;
+	background:#24043A;
 	border:solid 1px white;
 	color:white;
 }
 .top_panel input:hover{
 	background:#24043A;
-}
-
-.top_panel input:active{
-	color:#E138AA;
+	border:solid 1px #DCCCF7;
+	color:#DCCCF7;
 }
 
 .rpd_form fieldset {
 background: #EBE5ED;
-margin
 }
 .rpd_form legend {
 margin-left:2em;
@@ -187,17 +202,16 @@ color: white;
 background: #24043A;
 padding: 0.2em 1em;
 }
-.rpd_form label {
-width: 18em;
+.rpd_form .text label {
+width: 14em;
 float: left;
 text-align: right;
 padding-top: 0.2em;
 margin-right: 0.1em;
-display: block;
 }
-.rpd_form input {
+.rpd_form .text input {
 margin-left: 0.5em;
-width:25em;
+width:30em;
 }
 
 .rpd_form .submit{
@@ -211,14 +225,21 @@ margin-left: 0.5em;
 width:auto;
 }
 
+
 .rpd_form .check_box label {
-width:auto;
-margin-left:5em;
+	width:auto;
+	margin-left:1em;
 }
 
-.rpd_form .check_box input {
-margin-left: 0.5em;
-width:auto;
+.rpd_form table {
+	margin: 1em;
+}
+.rpd_form tr{
+	border-bottom:1px solid;
+}
+td.label {
+	width: 39em;
+	padding: 1em 0 0 0;
 }
 .right {
 	text-align:right;

@@ -1,26 +1,25 @@
 = form_for @speech, :url => { :action => "create_entry_form" } do |f|
-	= f.label :title, "Название доклада"
-	%p= f.text_field :title
-	
-	%p= f.label :organization, "Название организации"
-	%p= f.text_field :organization
-	
-	%p= f.label :author_name, "ФИО автора (коллектива авторов)"
-	%p= f.text_field :author_name
-	
-	-@themes.each do |t|
-		.check_box
-			=f.label :theme_id, truncate(t.title, :length => 60)
-			=f.radio_button :theme_id, t.id
-			%p
-	=f.select("theme_id",Theme.all.collect {|t| [t.title, t.id]}) 
-	
-	%p= f.label :phone, "Контактный телефон"
-	%p= f.text_field :phone
+	.text
+		= f.label :title, "Название доклада"
+		%p= f.text_field :title
+		
+		%p= f.label :organization, "Название организации"
+		%p= f.text_field :organization
+		
+		%p= f.label :author_name, "ФИО автора (коллектива авторов)"
+		%p= f.text_field :author_name
+		
+		%p= f.label :phone, "Контактный телефон"
+		%p= f.text_field :phone
+	%table
+		-@themes.each do |t|	
+			%tr
+				%td{:class => "label"}= f.label :theme_id, t.title
+				%td= f.radio_button :theme_id, t.id
 	
 	.check_box
 		= f.label :delivery_subscription, "Хотите ли вы подписаться на рассылку новостей?"
-		%p= f.check_box :delivery_subscription
+		= f.check_box :delivery_subscription
 	
 	.submit
 		= f.submit "Отправить"
