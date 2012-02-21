@@ -2,7 +2,7 @@
 	.rpd_form
 		%fieldset
 			%legend Заполните заявку
-			= render 'form'
+			= render 'entry_form'
 %p= link_to 'Назад', speech_path(current_user.speech)
 - if current_user.admin?
 	%p= link_to '<< К списку докладов', speeches_path

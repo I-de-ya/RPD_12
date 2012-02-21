@@ -50,6 +50,10 @@ header .email {
 hr.menu_line {
 	height: 0px;
 }
+
+p.notice {
+	color:#24043A;
+}
 .maintitle {
 	text-align:center;
 	margin-top:0;
@@ -149,7 +153,7 @@ footer {
 
 .nav {
 	margin-left:1em;
-	margin-top:20px;
+	margin-top:15px;
 	width:18em;
 	text-align:left;
 }
@@ -243,5 +247,10 @@ td.label {
 }
 .right {
 	text-align:right;
+	padding:0.3em 0.5em 0.3em 0;
+}
+td.speech_show {
+	text-align:right;
+	width:13em;
 	padding:0.3em 0.5em 0.3em 0;
 }

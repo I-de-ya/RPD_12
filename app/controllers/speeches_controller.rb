@@ -48,6 +48,7 @@ class SpeechesController < ApplicationController
   def edit
   	@title = current_user.admin? ? "Редактирование доклада" : "Редактирование заявки"
     @speech = Speech.find(params[:id])
+    @themes = Theme.all
   end
 
   def update

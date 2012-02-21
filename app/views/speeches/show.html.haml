@@ -4,27 +4,31 @@
 			%legend= @legend_title
 			%table
 				%tr
-					%td.right
+					%td.speech_show
 						%B Название доклада:
 					%td= @speech.title
 				%tr
-					%td.right
+					%td.speech_show
 						%B Организация:
 					%td= @speech.organization
 				%tr
-					%td.right
+					%td.speech_show
 						%B ФИО авторов:
 					%td= @speech.author_name	
 				%tr
-					%td.right
+					%td.speech_show
 						%B Контактный телефон:
 					%td= @speech.phone
 				%tr
-					%td.right
+					%td.speech_show
 						%B Контактный e-mail:
 					%td= @speech.user.nil? ? "-" : @speech.user.email
 				%tr
-					%td.right
+					%td.speech_show
+						%B Тема:
+					%td= @speech.theme.nil? ? '-' : @speech.theme.title
+				%tr
+					%td.speech_show
 						%B Подписка на рассылку новостей:
 					%td= @speech.delivery_subscription ? 'Да' : 'Нет'
 			%p= link_to "Редактировать", edit_speech_path

@@ -1,6 +1,7 @@
 .nav
 	%ul
 		%b
+			%hr.menu_line
 			%li= link_to t(:main_page), home_path
 			%hr.menu_line
 			%li= link_to t(:about_page), about_path
@@ -11,8 +12,10 @@
 			%hr.menu_line
 			%li= link_to t(:contacts_page), contacts_path
 			%hr.menu_line
-			%li= link_to t(:signup_page), signup_path
-			%hr.menu_line			
+			- if signed_in?
+			- else
+				%li= link_to t(:signup_page), signup_path
+				%hr.menu_line			
 		- if Rails.env.development?
 			%li
 				%B= link_to "Заботы разработчика", tasks_path

@@ -14,6 +14,12 @@
 		= f.label :phone, "Контактный телефон"
 	%p	
 		= f.text_field :phone
+	%table
+		-@themes.each do |t|	
+			%tr
+				%td{:class => "label"}= f.label :theme_id, t.title
+				%td= f.radio_button :theme_id, t.id
+				
 	- if current_user.admin?	
 		%p= f.label :email, "Контактный e-mail"
 		%p= f.text_field :email

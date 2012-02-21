@@ -13,11 +13,14 @@
 
 		.content
 			%h2.title= @title
-			- if flash[:notice]
-				%p= flash[:notice]
-			- if flash[:success]
-				%p= flash[:success]
+
 			.main
+				- if flash[:notice]
+					%p.notice
+						%b= flash[:notice]
+				- if flash[:success]
+					%p.notice
+						%b= flash[:success]
 				= yield
 		%footer
 			Контакты maks.rydkin@gmail.com
