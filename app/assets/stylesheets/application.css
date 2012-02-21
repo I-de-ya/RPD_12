@@ -148,6 +148,7 @@ footer {
 .top_panel a:hover{
 	color: #DCCCF7;
 }
+ /* end:Top panel navigation */
 
  /* Navigation */
 
@@ -185,6 +186,31 @@ footer {
 .nav li a:hover{
 	color: #DCCCF7;
 }
+
+ /* end:Navigation */
+
+ /* Content */
+
+
+.content a{
+	text-decoration:none;
+	font-weight:bold;
+	color: black;
+	font-style:oblique;
+	border-bottom: 1px black dashed;
+}
+
+.content a:link{
+}
+
+.content a:visited{
+}
+
+.content a:hover{
+	border-bottom: 1px solid;
+}
+
+/* end:Content */
 
 .top_panel input{
 	background:#24043A;
