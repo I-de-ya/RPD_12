@@ -1,7 +1,7 @@
 # coding: utf-8
 class PostsController < ApplicationController
-  before_filter :authenticate, :except => [:news_page]
-  before_filter :admin_user, :except => [:news_page]
+  before_filter :authenticate, :except => [:news_page, :show]
+  before_filter :admin_user, :except => [:news_page, :show]
 
   def index
   	@title = t(:news_management_page)
@@ -28,8 +28,14 @@ class PostsController < ApplicationController
   end
 
   def show
-  	@title = "Текущая новость"
     @post = Post.find(params[:id])
+    
+    if current_user.nil?
+      @title = @post.title
+    else
+      @title = @post.title
+      @title = "Новость" if current_user.admin?
+    end
   end
 
   def edit

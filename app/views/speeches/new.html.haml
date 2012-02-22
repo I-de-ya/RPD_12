@@ -1,8 +1,12 @@
 # coding: utf-8
-%h1.title Новый доклад
-
-.speeches_form
-	%fieldset
-		%legend Заполните заявку
-		= render 'form'
-= link_to "<< Назад, к докладам", speeches_path
+-if current_user.admin?
+	%h1.title Новый доклад
+-else
+	= "Внимание! Заявки принимаются до 15-20 февраля 2012 года"
+%p
+	.rpd_form
+		%fieldset
+			%legend Заполните заявку
+			= render 'form'
+-if current_user.admin?
+	= link_to "<< Назад, к докладам", speeches_path

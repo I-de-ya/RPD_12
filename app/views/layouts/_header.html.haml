@@ -13,6 +13,8 @@
 					|
 					= link_to "Настройка прав доступа", users_path
 					|
+					= link_to "Тематические разделы", themes_path
+					|
 				- else
 					- if current_user.speech == nil
 						= link_to "Заявка на участие", registration_path
@@ -36,5 +38,7 @@
 					|
 					= link_to "Зарегистрироваться", signup_path
 	.email
-		%b Наша почта: conference@conf.com
+		%b 
+			Наша почта: 
+			= mail_to "conference@conf.com"
 	

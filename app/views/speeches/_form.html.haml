@@ -1,31 +1,31 @@
 = form_for @speech do |f|
-	= f.label :title, "Название доклада"
-	%p
-		= f.text_field :title
-	%p
-		= f.label :organization, "Название организации"
-	%p	
-		= f.text_field :organization
-	%p
-		= f.label :author_name, "ФИО авторов"
-	%p	
-		= f.text_field :author_name
-	%p
-		= f.label :phone, "Контактный телефон"
-	%p	
-		= f.text_field :phone
-	%table
-		-@themes.each do |t|	
-			%tr
-				%td{:class => "label"}= f.label :theme_id, t.title
-				%td= f.radio_button :theme_id, t.id
+	.text
+		= f.label :title, "Название доклада"
+		%p= f.text_field :title
+		
+		%p= f.label :organization, "Название организации"
+		%p= f.text_field :organization
+		
+		%p= f.label :author_name, "ФИО автора (коллектива авторов)"
+		%p= f.text_field :author_name
+		
+		%p= f.label :phone, "Контактный телефон"
+		%p= f.text_field :phone
+	.nested_rpd_form
+		%fieldset
+			%legend Выберите тематический раздел:
+			%table
+				-@themes.each do |t|	
+					%tr
+						%td{:class => "label"}= f.label :theme_id, t.title
+						%td= f.radio_button :theme_id, t.id
 				
 	- if current_user.admin?	
-		%p= f.label :email, "Контактный e-mail"
-		%p= f.text_field :email
+		.text
+			%p= f.label :email, "Контактный e-mail"
+			%p= f.text_field :email
 	.check_box
-		= f.label :delivery_subscription, "Подписка на рассылку новостей"
-		%p	
-			= f.check_box :delivery_subscription
+		= f.label :delivery_subscription, current_user.admin? ? "Подписка на рассылку новостей" : "Хотите ли вы подписаться на рассылку новостей?"
+		= f.check_box :delivery_subscription
 	.submit	
-		= f.submit "Подтвердить"
+		= f.submit current_user.admin? ? "Подтвердить" : "Отправить"

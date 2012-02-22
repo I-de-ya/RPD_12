@@ -23,7 +23,8 @@
 						%b= flash[:success]
 				= yield
 		%footer
-			Техническая поддержка сайта: maks.rydkin@gmail.com
+			Техническая поддержка сайта: 
+			= mail_to "maks.rydkin@gmail.com"
 			|
 			= language_selector
 			| Designed by I-de-ya.

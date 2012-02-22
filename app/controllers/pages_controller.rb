@@ -27,5 +27,10 @@ class PagesController < ApplicationController
 
   def tasks
   	@title = "Заботы разработчика"
-  end	
+  end
+
+  def dates
+    @title = "ВАЖНЫЕ ДАТЫ"
+  end
+
 end

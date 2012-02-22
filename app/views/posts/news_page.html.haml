@@ -1,9 +1,12 @@
-- @posts.each do |post|
-
-	%hr
-	%h4= post.title
-	%p.date
-		%i= post.created_at.strftime("%d-%m-%Y")
+.news_box
+	.image
+	.news
+		%h3
+			%u Новости
+		- @posts.each do |post|
+			%p.date
+				= post.created_at.strftime("%d-%m-%Y")
+				= link_to post.title, post_path(post)
 
 %p
 	%b IX Международный Симпозиум по радиационной плазмодинамике «РПД-2012»
@@ -28,7 +31,7 @@
 
 %p 
 	Для участия в конференции необходимо
-	= link_to "зарегистрироваться на сайте", "#"
+	= link_to "зарегистрироваться на сайте", signup_path
 	, далее заполнить
 	= link_to "электронную заявку участника", "#"
 	и

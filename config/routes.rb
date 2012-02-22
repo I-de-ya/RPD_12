@@ -1,33 +1,50 @@
 RPD12::Application.routes.draw do
 	
+  get "themes/index"
+
   get "sessions/new"
 
 	post "speeches/create_entry_form"
 	
-	get "pages/home"
-  match '/home', :to => 'posts#news_page'
-  get "pages/home"
+#	get "pages/home"
+#  match '/home', :to => 'posts#news_page'
+#  get "pages/home"
 	match '/home', :to => 'posts#news_page'
-  get "pages/about"
+#  get "pages/about"
 	match '/about', :to => 'pages#about'
-  get "pages/org_committee"
+ # get "pages/org_committee"
 	match '/org_committee', :to => 'pages#org_committee'
-  get "pages/thesis_rules"
+  #get "pages/thesis_rules"
 	match '/thesis_rules', :to => 'pages#thesis_rules'
-  get "pages/contacts"
+ # get "pages/contacts"
 	match '/contacts', :to => 'pages#contacts'
-  get "pages/signup"
+ # get "pages/signup"
   match '/signup', :to => 'users#new'
-  get "pages/tasks"
+  #get "pages/tasks"
   match '/tasks', :to => 'pages#tasks'
+
+  match '/dates', :to => 'pages#dates'
   
-  match '/registration', :to => 'speeches#new_entry_form'
+  match '/registration', :to => 'speeches#new'
+
 
   scope "(:locale)", :locale => /ru|en/ do
     resources :users
-    resources :pages
+    resources :pages do
+      collection do
+        get 'about'
+        get 'home'
+        get 'org_committee'
+        get 'thesis_rules'
+        get 'contacts'
+        get 'signup'
+        get 'tasks'
+        get 'dates'
+      end
+    end
     resources :posts
-    resources :speeches         
+    resources :speeches
+    resources :themes
     resources :sessions, :only => [:new, :create, :destroy]
   end
 

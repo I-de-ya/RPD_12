@@ -12,6 +12,8 @@
 			%hr.menu_line
 			%li= link_to t(:contacts_page), contacts_path
 			%hr.menu_line
+			%li= link_to "ВАЖНЫЕ ДАТЫ", dates_path
+			%hr.menu_line
 			- if signed_in?
 			- else
 				%li= link_to t(:signup_page), signup_path

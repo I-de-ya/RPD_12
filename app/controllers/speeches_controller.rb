@@ -2,7 +2,7 @@
 class SpeechesController < ApplicationController
   before_filter :authenticate
   before_filter :correct_user, :only => [:edit, :update, :show]
-  before_filter :admin_user, :only => [:new, :create, :index, :delete, :destroy]
+  before_filter :admin_user, :only => [:index, :delete, :destroy]
 
   def index
   	@title = t(:speeches_management_page)
@@ -10,24 +10,33 @@ class SpeechesController < ApplicationController
   end
   
   def new
-  	@speech = Speech.new
+  	@title = t(:registration_page) unless current_user.admin?
+    @speech = Speech.new
+    @themes = Theme.all
   end
-
+=begin
 	def new_entry_form # Создание новой формы заявки
 		@title = t(:registration_page)
     @speech = Speech.new
     @themes = Theme.all
 	end
-
+=end
   def create
-  	@speech = Speech.new(params[:speech])
-  	if @speech.save
-  		redirect_to @speech, :notice => 'Доклад был успешно создан.'
+    @speech = Speech.new(params[:speech])
+   
+    unless current_user.admin?
+      @title = t(:registration_page)
+      @speech.user_id = current_user.id 
+    end
+  	
+    if @speech.save
+  		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно создан.' : 'Ваша заявка принята.'
   	else
   		render :action => "new"
   	end
   end
 
+=begin
 	def create_entry_form # Создание новой заявки
   	@title = t(:registration_page)
     @speech = Speech.new(params[:speech])
@@ -39,6 +48,8 @@ class SpeechesController < ApplicationController
   		render :action => "new_entry_form"
   	end
   end
+=end
+
 
   def show
   	@legend_title = current_user.admin? ? "Текущий доклад" : "Ваша заявка"

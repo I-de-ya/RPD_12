@@ -88,7 +88,7 @@ left_bar {
 }
 
 p.date {
-	text-align:right;
+	text-align:left;
 }
 
 .title {
@@ -196,7 +196,6 @@ footer {
 	text-decoration:none;
 	font-weight:bold;
 	color: black;
-	font-style:oblique;
 	border-bottom: 1px black dashed;
 }
 
@@ -211,6 +210,33 @@ footer {
 }
 
 /* end:Content */
+
+/* News_box */
+.news_box{
+	background: #EBE5ED;
+	border:1px solid black;
+	height:auto;
+	min-height: 229px;
+
+}
+
+.news_box .image{
+	width: 299px;
+	height: 229px;
+	background-image:url(bmstu_building.jpg);
+	float:right;
+}
+
+.news_box .news{
+	margin:2px 20px;
+	max-width:329px;
+}
+
+.news_box .news h3{
+	text-align:center;
+}
+
+/* end:News_box */
 
 .top_panel input{
 	background:#24043A;
@@ -232,6 +258,7 @@ color: white;
 background: #24043A;
 padding: 0.2em 1em;
 }
+
 .rpd_form .text label {
 width: 14em;
 float: left;
@@ -266,6 +293,21 @@ width:auto;
 }
 .rpd_form tr{
 	border-bottom:1px solid;
+}
+.nested_rpd_form{
+	margin:10px 0;
+}
+.nested_rpd_form fieldset{
+	padding:0 auto;
+}
+.nested_rpd_form legend {
+	margin-left:2em;
+	color: black;
+	background: none;
+	padding: 0.1em 1em;
+}
+.nested_rpd_form table {
+	margin: 0;
 }
 td.label {
 	width: 39em;

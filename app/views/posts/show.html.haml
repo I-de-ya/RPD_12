@@ -1,11 +1,19 @@
-%table
-	%tr
-		%td
-			%B Заголовок
-		%td= @post.title
-	%tr
-		%td
-			%B Тело новости
-		%td= @post.body
-= link_to "Редактировать", edit_post_path
-%p= link_to "<< Назад, к списку новостей", posts_path
+- if current_user.nil?
+	= @post.body
+	%p= link_to "<< Назад, на главную", home_path
+- else
+	-if current_user.admin?
+		%table
+			%tr
+				%td
+					%B Заголовок
+				%td= @post.title
+			%tr
+				%td
+					%B Тело новости
+				%td= @post.body
+		= link_to "Редактировать", edit_post_path
+		%p= link_to "<< Назад, к списку новостей", posts_path
+	-else
+		= @post.body
+		%p= link_to "<< Назад, на главную", home_path
