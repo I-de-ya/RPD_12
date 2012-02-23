@@ -13,6 +13,7 @@ require 'rake/dsl_definition'
 gem "rake", "!= 0.9.0"
 gem 'dynamic_form'
 gem 'carrierwave'
+gem 'RedCloth'
 
 # Gems used only for assets and not required
 # in production environments by default.

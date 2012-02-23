@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218073515) do
+ActiveRecord::Schema.define(:version => 20120223192136) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120218073515) do
     t.integer  "user_id"
     t.integer  "theme_id"
     t.boolean  "is_plenar",             :default => false
+    t.string   "thesis"
   end
 
   create_table "themes", :force => true do |t|

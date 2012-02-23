@@ -33,4 +33,16 @@ class PagesController < ApplicationController
     @title = "ВАЖНЫЕ ДАТЫ"
   end
 
+  def payment
+    @title = "ОПЛАТА УЧАСТИЯ"
+  end
+
+  def download_rules
+    send_file "#{Rails.root}/public/Правила оформления текстов докладов.doc"
+  end
+
+  def download_sample
+    send_file "#{Rails.root}/public/Пример оформления доклада.doc"
+  end
+
 end

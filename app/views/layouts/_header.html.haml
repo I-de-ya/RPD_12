@@ -4,8 +4,6 @@
 			.top_menu
 				= current_user.email
 				|
-				= link_to "Заботы разработчика", tasks_path
-				|
 				- if current_user.admin?
 					= link_to t(:news_management_page), posts_path
 					|
@@ -16,12 +14,9 @@
 					= link_to "Тематические разделы", themes_path
 					|
 				- else
-					- if current_user.speech == nil
-						= link_to "Заявка на участие", registration_path
-						|
-					- else
-						= link_to "Заявка", speech_path(current_user.speech)
-						|
+					= link_to "Заявка на участие", speech_path_helper
+					|
+					- unless current_user.speech == nil
 						= link_to "Тезисы", "#"
 						|
 						= link_to "Оплата", "#"

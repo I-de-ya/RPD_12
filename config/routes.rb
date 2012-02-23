@@ -24,6 +24,8 @@ RPD12::Application.routes.draw do
   match '/tasks', :to => 'pages#tasks'
 
   match '/dates', :to => 'pages#dates'
+
+  match '/payment', :to => 'pages#payment'
   
   match '/registration', :to => 'speeches#new'
 
@@ -40,6 +42,9 @@ RPD12::Application.routes.draw do
         get 'signup'
         get 'tasks'
         get 'dates'
+        get 'payment'
+        get 'download_rules'
+        get 'download_sample'
       end
     end
     resources :posts

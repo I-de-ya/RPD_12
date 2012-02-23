@@ -3,6 +3,7 @@ class SpeechesController < ApplicationController
   before_filter :authenticate
   before_filter :correct_user, :only => [:edit, :update, :show]
   before_filter :admin_user, :only => [:index, :delete, :destroy]
+  before_filter :has_speech, :only => [:new]
 
   def index
   	@title = t(:speeches_management_page)
@@ -85,5 +86,9 @@ class SpeechesController < ApplicationController
     def correct_user
       @user = Speech.find(params[:id]).user
       redirect_to(root_path) unless (current_user?(@user) || current_user.admin?)
+    end
+
+    def has_speech
+      redirect_to current_user.speech unless current_user.speech == nil
     end
 end

@@ -2,6 +2,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index]
 	before_filter :admin_user, :only => [:index]
+  
   def index
     @title = "Пользователи"
     @users = User.all
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
     	
     	if @user.save
     		sign_in @user
-      	redirect_to :controller => 'speeches', :action => 'new_entry_form'
+      	redirect_to :controller => 'speeches', :action => 'new'
     	else
       		@title = "Зарегистрироваться"
       		render 'new'

@@ -11,6 +11,9 @@
 		
 		%p= f.label :phone, "Контактный телефон"
 		%p= f.text_field :phone
+
+		%p= f.label :thesis, "Прикрепите доклад"
+		%p= f.file_field :thesis
 	.nested_rpd_form
 		%fieldset
 			%legend Выберите тематический раздел:
@@ -18,8 +21,7 @@
 				-@themes.each do |t|	
 					%tr
 						%td{:class => "label"}= f.label :theme_id, t.title
-						%td= f.radio_button :theme_id, t.id
-				
+						%td= f.radio_button :theme_id, t.id			
 	- if current_user.admin?	
 		.text
 			%p= f.label :email, "Контактный e-mail"
