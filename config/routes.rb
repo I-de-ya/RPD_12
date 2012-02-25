@@ -55,6 +55,7 @@ RPD12::Application.routes.draw do
 
   match "/signin" => "sessions#new", :as => "signin"
   match "/signout" => "sessions#destroy", :as => "signout"
+  match "/signup" => "users#new", :as => "signup"
 
   match '/:locale' => 'posts#news_page'
   root :to => "posts#news_page"

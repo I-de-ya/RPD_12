@@ -1,16 +1,16 @@
 .rpd_form
 	%fieldset
-		%legend Введите личные данные
+		%legend Введите личные данные	
 		= form_for(:session, :url => sessions_path) do |f|
-			.field
-				= f.label :email, "Электронная почта"
-				%p
-				= f.text_field :email
-			.field
-				= f.label :password, "Пароль"
-				%p
-				= f.password_field :password
+
+			.text
+				.field
+					= f.label :email, "Электронная почта"
+					= f.text_field :email
+				.field
+					= f.label :password, "Пароль"
+					= f.password_field :password
 			.submit
 				= f.submit "Войти"
 		Не зарегистрированы?
-		= link_to "Зарегистрируйтесь!", registration_path
+		= link_to "Зарегистрируйтесь!", signup_path

@@ -344,6 +344,19 @@ td.speech_show {
 	font-weight:bold;
 	text-align:center;
 }
-.blue {
+
+
+.field_with_errors label {
+	color: #E40045;
+}
+
+#error_explanation h4{
+	color: #E40045;
+	margin: 2px 10px;
+}
+
+p.error{
+	color: #E40045;
+}.blue {
 	color:#24043A;
 }

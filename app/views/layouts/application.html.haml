@@ -21,6 +21,9 @@
 				- if flash[:success]
 					%p.notice
 						%b= flash[:success]
+				- if flash[:error]
+					%p.error
+						%b= flash[:error]
 				= yield
 		%footer
 			Техническая поддержка сайта: 

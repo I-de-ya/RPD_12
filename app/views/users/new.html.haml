@@ -4,18 +4,29 @@
 .rpd_form
   %fieldset
     %legend Заполните поля
+    -if @user.errors.any?
+      %fieldset
+        #error_explanation
+          %h4
+            Обнаружено
+            = @user.errors.count
+            = Russian.p(@user.errors.count, "ошибка", "ошибки", "ошибок")
+            в следующих полях:
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
     = form_for(@user) do |f|
-      .field
-        = f.label :email, "Электронная почта"
-        %p
-        = f.text_field :email
-      .field
-        = f.label :password, "Пароль"
-        %p
-        = f.password_field :password
-      .field
-        = f.label :password_confirmation, "Подтверждение пароля"
-        %p
-        = f.password_field :password_confirmation
-      .submit
-        = f.submit "Зарегистрироваться"
+      .text
+        .field
+          = f.label :email, "Электронная почта"
+          %p
+          = f.text_field :email
+        .field
+          = f.label :password, "Пароль"
+          %p
+          = f.password_field :password
+        .field
+          = f.label :password_confirmation, "Подтверждение пароля"
+          %p
+          = f.password_field :password_confirmation
+        .submit
+          = f.submit "Зарегистрироваться"

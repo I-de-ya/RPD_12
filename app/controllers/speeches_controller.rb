@@ -33,7 +33,7 @@ class SpeechesController < ApplicationController
     if @speech.save
   		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно создан.' : 'Ваша заявка принята.'
   	else
-  		render :action => "new"
+  		render "new"
   	end
   end
 
