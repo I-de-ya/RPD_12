@@ -8,10 +8,10 @@
       %fieldset
         #error_explanation
           %h4
-            Обнаружено
+            = Russian.p(@user.errors.count, "Обнаружена", "Обнаружены", "Обнаружено")
             = @user.errors.count
             = Russian.p(@user.errors.count, "ошибка", "ошибки", "ошибок")
-            в следующих полях:
+            = ":"
           - @user.errors.full_messages.each do |msg|
             %li= msg
     = form_for(@user) do |f|

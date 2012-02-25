@@ -1,3 +1,14 @@
+-if @speech.errors.any?
+	%fieldset
+		#error_explanation
+			%h4
+				= Russian.p(@speech.errors.count, "Обнаружена", "Обнаружены", "Обнаружено")
+				= @speech.errors.count
+				= Russian.p(@speech.errors.count, "ошибка", "ошибки", "ошибок")
+				= ":"
+			- @speech.errors.full_messages.each do |msg|
+				%li= msg
+
 = form_for @speech do |f|
 	.text
 		= f.label :title, "Название доклада"
@@ -22,7 +33,7 @@
 				-@themes.each do |t|	
 					%tr
 						%td{:class => "label"}= f.label :theme_id, t.title
-						%td= f.radio_button :theme_id, t.id			
+						%td= f.radio_button :theme_id, t.id
 	- if current_user.admin?	
 		.text
 			%p= f.label :email, "Контактный e-mail"

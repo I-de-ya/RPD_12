@@ -23,9 +23,9 @@
 		- else
 			.form
 				= form_for(:session, :url => sessions_path) do |f|
-					= f.label :email
+					= f.label :email, "Электронная почта"
 					= f.text_field :email
-					= f.label :password
+					= f.label :password, "Пароль"
 					= f.password_field :password
 					= f.submit "Войти"
 					|
@@ -34,4 +34,3 @@
 		%b 
 			Наша почта: 
 			= mail_to "conference@conf.com"
-	

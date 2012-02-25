@@ -2,6 +2,9 @@ ru:
   attributes:
     password: "Пароль"
     email: "Электронный адрес"
+    title: "Название"
+    organization: "Название организации"
+    author_name: "ФИО автора (коллектива авторов)"
   hello: "Привет, мир!"
   main_page: "ГЛАВНАЯ СТРАНИЦА"
   about_page: "О СИМПОЗИУМЕ"

@@ -24,7 +24,8 @@ class SpeechesController < ApplicationController
 =end
   def create
     @speech = Speech.new(params[:speech])
-   
+    @themes = Theme.all
+       
     unless current_user.admin?
       @title = t(:registration_page)
       @speech.user_id = current_user.id 

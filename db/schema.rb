@@ -11,14 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120223192136) do
+ActiveRecord::Schema.define(:version => 20120225160419) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug_en"
+    t.string   "slug_ru"
   end
+
+  add_index "posts", ["slug_en"], :name => "index_posts_on_slug_en"
+  add_index "posts", ["slug_ru"], :name => "index_posts_on_slug_ru"
 
   create_table "speeches", :force => true do |t|
     t.string   "organization"
