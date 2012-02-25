@@ -47,6 +47,10 @@ header .email {
 	color: #24043A;
 }
 
+header .email a{
+	color: #E40045;
+}
+
 hr.menu_line {
 	height: 0px;
 }
@@ -103,12 +107,12 @@ p.date {
 	border-bottom: solid black 1px;
 	text-align:center;
 	color:#EBE5ED;
-	padding: 0.2em;
-	font-size:10pt;
+	padding: 0.4em;
+
 }
 
 .status_panel .red{
-	color:#ef2c5f;
+	color:#E40045;
 	text-decoration:none;
 }
 
@@ -117,7 +121,7 @@ p.date {
 	text-decoration:none;
 }
 .status_panel .red:hover{
-	color:#ef2c5f;
+	color:#E40045;
 	text-decoration:underline;
 }
 
@@ -164,7 +168,7 @@ footer {
 	padding:0;
 }
 .nav li{
-	
+	color: white;
 	list-style-type:none;
 	padding:0.3em 0 0.3em 0.3em;
 	width:18em;
@@ -173,6 +177,10 @@ footer {
 	display: block;
 	text-decoration:none;	
 	font-size:10pt;
+}
+
+.nav li.indention{
+	padding:0.7em 0 0.3em 2em;
 }
 
 .nav li a:link{

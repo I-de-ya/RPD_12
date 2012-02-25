@@ -1,3 +1,5 @@
+- if @speech.thesis_url.nil?
+	=render "form_for_add_thesis.html.haml"
 %p
 	.rpd_form
 		%fieldset
@@ -31,10 +33,12 @@
 					%td.speech_show
 						%B Подписка на рассылку новостей:
 					%td= @speech.delivery_subscription ? 'Да' : 'Нет'
-				%tr
-					%td.speech_show
-						%B Текст доклада
-					%td= link_to File.basename(@speech.thesis_url), @speech.thesis_url
+				- if @speech.thesis_url.nil?
+				- else
+					%tr
+						%td.speech_show
+							%B Текст доклада
+							%td= link_to File.basename(@speech.thesis_url), @speech.thesis_url
 			%p= link_to "Редактировать", edit_speech_path
 			%p
 			- if current_user.admin?

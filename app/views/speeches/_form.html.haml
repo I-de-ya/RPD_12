@@ -16,7 +16,8 @@
 		%p= f.file_field :thesis
 	.nested_rpd_form
 		%fieldset
-			%legend Выберите тематический раздел:
+			%legend 
+				%b Выберите тематический раздел:
 			%table
 				-@themes.each do |t|	
 					%tr

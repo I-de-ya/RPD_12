@@ -14,7 +14,7 @@
 	%b Прием тезизов 
 	до 1.06.2012
 	- if signed_in?
-		- if current_user.speech == nil
+		- if current_user.speech.nil? || current_user.speech.thesis_url.nil?
 			(
 			= link_to 'Не отправлены', registration_path, {:class => "red"}
 			)
