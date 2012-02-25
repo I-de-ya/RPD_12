@@ -1,8 +1,9 @@
 .news_box
 	.image
 	.news
-		%h3
-			%u Новости
+		%h3.blue
+			Новости
+			%hr
 		- @posts.each do |post|
 			%p.date
 				= post.created_at.strftime("%d-%m-%Y")

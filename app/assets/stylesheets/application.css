@@ -233,6 +233,7 @@ footer {
 	height: 229px;
 	background-image:url(bmstu_building.jpg);
 	float:right;
+	border-left:solid 1px black;
 }
 
 .news_box .news{
@@ -342,4 +343,7 @@ td.speech_show {
 .dates td.centered{
 	font-weight:bold;
 	text-align:center;
+}
+.blue {
+	color:#24043A;
 }

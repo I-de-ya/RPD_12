@@ -1,4 +1,7 @@
 = form_for @speech, :action => "update" do |f|
-	%p= f.label :thesis, "Прикрепите доклад"
-	%p= f.file_field :thesis
-	= f.submit current_user.admin? ? "Подтвердить" : "Отправить"
+	%p
+		%b
+			= f.label :thesis, "Прикрепите доклад"
+			= ":"
+		= f.file_field :thesis
+		%br= f.submit current_user.admin? ? "Подтвердить" : "Отправить"

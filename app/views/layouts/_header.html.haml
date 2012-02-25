@@ -17,9 +17,7 @@
 					= link_to "Заявка на участие", speech_path_helper
 					|
 					- unless current_user.speech == nil
-						= link_to "Тезисы", "#"
-						|
-						= link_to "Оплата", "#"
+						= link_to "Оплата", payment_path
 						|
 				= link_to "Выйти", signout_path, :method => :delete
 		- else
