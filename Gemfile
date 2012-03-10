@@ -9,8 +9,8 @@ gem 'sqlite3'
 gem 'russian', '~> 0.6.0'
 gem 'haml'
 
-require 'rake/dsl_definition'
-gem "rake", "!= 0.9.0"
+# require 'rake/dsl_definition'
+# gem "rake", "!= 0.9.0"
 gem 'dynamic_form'
 gem 'carrierwave'
 gem 'RedCloth'
@@ -38,4 +38,9 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :production do
+  # Pretty printed test output
+  gem 'mysql2'
 end
