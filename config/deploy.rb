@@ -17,6 +17,8 @@ role :web, "rpd2012.bmstu.ru"                          # Your HTTP server, Apach
 role :app, "rpd2012.bmstu.ru"                          # This may be the same as your `Web` server
 role :db,  "rpd2012.bmstu.ru", :primary => true # This is where Rails migrations will run
 
+set :keep_releases, 1
+
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
@@ -31,6 +33,6 @@ after "deploy:bundle_gems","deploy:restart"
    task :start do ; end
    task :stop do ; end
    task :restart, :roles => :app, :except => { :no_release => true } do
-     run "# touch #{File.join(current_path,'tmp','restart.txt')}"
+     run "touch #{File.join(current_path,'tmp','restart.txt')}"
    end
  end
