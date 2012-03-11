@@ -38,11 +38,11 @@ class PagesController < ApplicationController
   end
 
   def download_rules
-    send_file "#{Rails.root}/public/Правила оформления текстов докладов.doc"
+    send_file "#{Rails.root}/public/paper_execution.doc"
   end
 
   def download_sample
-    send_file "#{Rails.root}/public/Пример оформления доклада.doc"
+    send_file "#{Rails.root}/public/paper_sample.doc"
   end
 
 end
