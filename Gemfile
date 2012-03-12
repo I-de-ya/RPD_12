@@ -8,6 +8,8 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'russian', '~> 0.6.0'
 gem 'haml'
+gem 'execjs'
+gem 'therubyracer'
 
 # require 'rake/dsl_definition'
 # gem "rake", "!= 0.9.0"
