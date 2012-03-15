@@ -1,7 +1,7 @@
 ru:
   attributes:
     password: "Пароль"
-    email: "Электронный адрес"
+    email: "Электронная почта"
     title: "Название"
     organization: "Название организации"
     author_name: "ФИО автора (коллектива авторов)"

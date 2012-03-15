@@ -30,9 +30,20 @@ after "deploy:bundle_gems","deploy:restart"
  	task :bundle_gems do
  		run "cd #{deploy_to}/current && bundle install"
  	end
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
+ 	desc "Populates the Production Database"
+    task :seed do
+    	puts "\n\n=== Populating the Production Database! ===\n\n"
+      	run "cd #{current_path}; rake db:seed RAILS_ENV=production"
+    end
+   	task :start do ; end
+   	task :stop do ; end
+
+	task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+     
+     
+	namespace :db do
+
+    end
  end

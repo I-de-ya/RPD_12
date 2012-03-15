@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
 						 :confirmation => true,
 						 :length => {:within => 6..40}
 	validates :email, :presence => true,
-					  :format => {:with => email_regex}
-					  #:uniqueness
+					  :format => {:with => email_regex},
+					  :uniqueness => true
 					  
 	before_save :encrypt_password
 

@@ -25,10 +25,6 @@ class PagesController < ApplicationController
   	@title = t(:signup_page)
   end
 
-  def tasks
-  	@title = "Заботы разработчика"
-  end
-
   def dates
     @title = "ВАЖНЫЕ ДАТЫ"
   end
@@ -42,7 +38,7 @@ class PagesController < ApplicationController
   end
 
   def download_sample
-    send_file "#{Rails.root}/public/paper_sample.doc"
+    send_file "#{Rails.root}/public/morozov_1.doc"
   end
 
 end

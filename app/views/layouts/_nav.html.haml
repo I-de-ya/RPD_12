@@ -21,8 +21,4 @@
 			%li.indention= link_to t(:thesis_rules_page), thesis_rules_path
 			
 			%li.indention= link_to "ОПЛАТА УЧАСТИЯ", payment_path	
-		- if Rails.env.development?
-			%hr.menu_line
-			%li
-				%B= link_to "Заботы разработчика", tasks_path
 			%hr.menu_line
