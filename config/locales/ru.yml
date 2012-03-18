@@ -5,6 +5,7 @@ ru:
     title: "Название"
     organization: "Название организации"
     author_name: "ФИО автора (коллектива авторов)"
+    thesis: "Файл "
   hello: "Привет, мир!"
   main_page: "ГЛАВНАЯ СТРАНИЦА"
   about_page: "О СИМПОЗИУМЕ"
@@ -17,3 +18,9 @@ ru:
   header_title: "IX международный симпозиум по радиационной плазмодинамике"
   news_management_page: "Новости"
   speeches_management_page: "Доклады"
+
+  errors:
+    messages:
+      wrong_size: "is the wrong size (should be %{file_size})"
+      size_too_small: "is too small (should be at least %{file_size})"
+      size_too_big: "превышает установленный размер (должен быть не более %{file_size})"

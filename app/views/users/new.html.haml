@@ -1,6 +1,5 @@
 %p
-  Регистрация на сайте является необходимым условием участия в Симпозиуме. Далее вы сможете оставить заявку на участие, отправить доклады в электронном виде.
-
+  Регистрация на сайте является необходимым условием участия в Симпозиуме. Далее вы сможете оставить заявку на участие и отправить доклады в электронном виде.
 .rpd_form
   %fieldset
     %legend Заполните поля
@@ -15,18 +14,19 @@
           - @user.errors.full_messages.each do |msg|
             %li= msg
     = form_for(@user) do |f|
+      Звездочкой (*) помечены поля, необходимые к заполнению
       .text
         .field
-          = f.label :email, "Электронная почта"
+          = f.label :email, "Электронная почта" + mark_required(@user, :email)
           %p
-          = f.text_field :email
+          = f.text_field :email, :placeholder => "sample@sample.com"
         .field
-          = f.label :password, "Пароль"
+          = f.label :password, "Пароль (не менее 6 символов)" + mark_required(@user, :password)
           %p
-          = f.password_field :password
+          = f.password_field :password, :placeholder => "Пароль может содержать любые символы"
         .field
-          = f.label :password_confirmation, "Подтверждение пароля"
+          = f.label :password_confirmation, "Подтверждение пароля" + mark_required(@user, :password)
           %p
-          = f.password_field :password_confirmation
+          = f.password_field :password_confirmation, :placeholder => "Повторите введенный выше пароль"
         .submit
           = f.submit "Зарегистрироваться"

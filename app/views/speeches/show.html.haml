@@ -27,9 +27,9 @@
 					%td= @speech.user.nil? ? "-" : @speech.user.email
 				%tr
 					%td.speech_show
-						%B Тема:
+						%B Тематический раздел:
 					%td= @speech.theme.nil? ? '-' : @speech.theme.title
-				%tr
+				-#%tr
 					%td.speech_show
 						%B Подписка на рассылку новостей:
 					%td= @speech.delivery_subscription ? 'Да' : 'Нет'

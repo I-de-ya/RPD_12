@@ -2,7 +2,7 @@
 -if current_user.admin?
 	%h1.title Новый доклад
 -else
-	= "Внимание! Заявки принимаются до 15-20 февраля 2012 года"
+	= "Внимание! Заявки принимаются до #{speech_deadline}."
 %p
 	.rpd_form
 		%fieldset

@@ -11,34 +11,34 @@
 
 = form_for @speech do |f|
 	.text
-		= f.label :title, "Название доклада"
-		%p= f.text_field :title
+		= f.label :title, "Название доклада" + mark_required(@speech, :title)
+		%p= f.text_field :title, :placeholder => "Новые тенденции развития СПД"
 		
-		%p= f.label :organization, "Название организации"
-		%p= f.text_field :organization
+		%p= f.label :organization, "Название организации" + mark_required(@speech, :organization)
+		%p= f.text_field :organization, :placeholder => "Московский государственный университет..."
 		
-		%p= f.label :author_name, "ФИО автора (коллектива авторов)"
-		%p= f.text_field :author_name
+		%p= f.label :author_name, "ФИО автора (коллектива авторов)" + mark_required(@speech, :author_name)
+		%p= f.text_field :author_name, :placeholder => "Морозов А.И., Бугрова А.И., Липатов А.С., Харчевников В.К."
 		
 		%p= f.label :phone, "Контактный телефон"
 		%p= f.text_field :phone
-
-		%p= f.label :thesis, "Прикрепите доклад"
-		%p= f.file_field :thesis
+	%fieldset
+		= f.label :thesis, "Прикрепите доклад (файлом не более 4МБ)"
+		= f.file_field :thesis
 	.nested_rpd_form
 		%fieldset
 			%legend 
 				%b Выберите тематический раздел:
 			%table
-				-@themes.each do |t|	
+				-@themes.each do |t|
 					%tr
 						%td{:class => "label"}= f.label :theme_id, t.title
 						%td= f.radio_button :theme_id, t.id
-	- if current_user.admin?	
+	- if current_user.admin?
 		.text
 			%p= f.label :email, "Контактный e-mail"
 			%p= f.text_field :email
-	.check_box
+	-#.check_box
 		= f.label :delivery_subscription, current_user.admin? ? "Подписка на рассылку новостей" : "Хотите ли вы подписаться на рассылку новостей?"
 		= f.check_box :delivery_subscription
 	.submit	

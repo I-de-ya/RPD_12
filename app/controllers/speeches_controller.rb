@@ -12,8 +12,8 @@ class SpeechesController < ApplicationController
   
   def new
   	@title = t(:registration_page) unless current_user.admin?
-    @speech = Speech.new
     @themes = Theme.all
+    @speech = Speech.new(:theme_id => @themes.first.id)
   end
 =begin
 	def new_entry_form # Создание новой формы заявки
@@ -66,7 +66,8 @@ class SpeechesController < ApplicationController
 
   def update
   	@speech = Speech.find(params[:id])
-  	if @speech.update_attributes(params[:speech])
+  	@themes = Theme.all
+    if @speech.update_attributes(params[:speech])
   		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно обновлен.' : 'Заявка была успешно обновлена'
   	else
   		render :action => "edit"

@@ -18,4 +18,12 @@ module ApplicationHelper
 			link_to "Русская версия", url_for(:locale => 'ru')
 		end
 	end
+
+	def mark_required(object,attribute)
+		" *" if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
+	end
+
+	def speech_deadline
+		"01.06.2012"
+	end
 end
