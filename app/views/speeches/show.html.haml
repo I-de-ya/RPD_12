@@ -43,3 +43,5 @@
 			%p
 			- if current_user.admin?
 				= link_to "<< Назад, к списку докладов", speeches_path
+			- else
+				= link_to "<< Назад, к списку заявок", speeches_path

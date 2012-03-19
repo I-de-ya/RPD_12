@@ -26,15 +26,19 @@ class PagesController < ApplicationController
   end
 
   def dates
-    @title = "ВАЖНЫЕ ДАТЫ"
+    @title = t(:dates_page)
   end
 
   def payment
-    @title = "ОПЛАТА УЧАСТИЯ"
+    @title = t(:payment_page)
   end
 
   def download_rules
     send_file "#{Rails.root}/public/paper_execution.doc"
+  end
+
+  def download_rules_en
+    send_file "#{Rails.root}/public/paper_execution_en.doc"
   end
 
   def download_sample

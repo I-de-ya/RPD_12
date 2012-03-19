@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_one :speech
+	has_many :speeches
 
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

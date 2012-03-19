@@ -26,7 +26,7 @@
 						%b= flash[:error]
 				= yield
 		%footer
-			Техническая поддержка сайта: 
+			= t(:technical_support) 
 			= mail_to "rydkin.rpd2012@yandex.ru"
-			-#|
-			-#= language_selector
+			|
+			= language_selector

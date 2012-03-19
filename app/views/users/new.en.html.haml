@@ -1,0 +1,30 @@
+%p 
+  Registration on this site is a prerequisite for participation in the Symposium. Then you can fill in entry forms and send abstracts via this site.
+.rpd_form
+  %fieldset
+    %legend Fill in the fields:
+    -if @user.errors.any?
+      %fieldset
+        #error_explanation
+          %h4
+            = @user.errors.count
+            errors in fields:
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+    = form_for(@user) do |f|
+      (*) Required fields
+      .text
+        .field
+          = f.label :email, "E-mail" + mark_required(@user, :email)
+          %p
+          = f.text_field :email, :placeholder => "sample@sample.com"
+        .field
+          = f.label :password, "Password (more than 6 symbols)" + mark_required(@user, :password)
+          %p
+          = f.password_field :password, :placeholder => "Password can include any symbols"
+        .field
+          = f.label :password_confirmation, "Password confirmation" + mark_required(@user, :password)
+          %p
+          = f.password_field :password_confirmation, :placeholder => "Please, repeat password"
+        .submit
+          = f.submit "Submit"

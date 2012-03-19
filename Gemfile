@@ -10,6 +10,7 @@ gem 'russian', '~> 0.6.0'
 gem 'haml'
 gem 'execjs'
 gem 'therubyracer'
+gem 'globalize3'
 
 # require 'rake/dsl_definition'
 # gem "rake", "!= 0.9.0"

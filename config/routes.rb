@@ -45,6 +45,7 @@ RPD12::Application.routes.draw do
         get 'payment'
         get 'download_rules'
         get 'download_sample'
+        get 'download_rules_en'
       end
     end
     resources :posts

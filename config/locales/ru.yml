@@ -15,9 +15,23 @@ ru:
   signup_page: "РЕГИСТРАЦИЯ УЧАСТНИКОВ"
   signin_page: "ВХОД ДЛЯ ЗАРЕГИСТРИРОВАННЫХ УЧАСТНИКОВ"
   registration_page: "ЗАЯВКА НА УЧАСТИЕ"
+  dates_page: "ВАЖНЫЕ ДАТЫ"
+  payment_page: "ОПЛАТА УЧАСТИЯ"
   header_title: "IX международный симпозиум по радиационной плазмодинамике"
   news_management_page: "Новости"
   speeches_management_page: "Доклады"
+
+  our_email: "Наша почта:"
+  to_participants: "Участникам:"
+  technical_support: "Техническая поддержка сайта:"
+  signup: "Зарегистрироваться"
+  signin: "Войти"
+  password: "Пароль"
+  email: "Электронная почта"
+  application_deadline: "Подача заявок"
+  abstracts_deadline: "Прием докладов"
+  till: "до "
+  back_to_main: "<< Назад, на главную"
 
   errors:
     messages:

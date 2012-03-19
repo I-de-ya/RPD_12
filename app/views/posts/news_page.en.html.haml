@@ -1,0 +1,44 @@
+.news_box
+	.image
+	.news
+		%h3.blue
+			News
+			%hr
+		- @posts.each do |post|
+			%p.date
+				= post.created_at.strftime("%d-%m-%Y")
+				= link_to post.title, post_path(post)
+
+%p
+	%b IX International Symposium on radiation plasma dynamics «RPD-2012»
+	will be held in
+	%b November 2012
+	at a hotel in Moscow region.
+
+%p The program of the Symposium will focus on topical problems of radiation plasma dynamics and its applications in power industry, mechanical engineering, ecology, medicine, etc.
+
+%p 
+	Academic school of young scientists 
+	%b «Аerophysics and physical mechanics of classical and quantum systems» 
+	will be held with the Symposium at the same time. 
+	
+%p International Symposium on radiation plasma dynamics is held regularly (every three years) since 1989.
+
+%p 
+	The program will include presentations by world leading scientists working in the fields of radiation plasma dynamics, low-temperature physics. Verbal statements and poster papers, selected by 
+	= link_to "Organizing committee", org_committee_path 
+	from among the submitted papers, will feature too.
+
+%p
+	%b Working language
+	of the Symposium and academic school is Russian. Abstracts are accepted written in English and Russian.
+
+%p 
+	To participate in the Symposium must
+	= link_to "register on the website", signup_path
+	, then 
+	= link_to "fill in the electronic application", speeches_path_helper
+	and
+	= link_to "send abstracts", speeches_path_helper
+	(only electronic forms will be accepted).
+%p Collection of articles will be released to the beginning of the Symposium and will be issued to participants who have paid the registration fee.

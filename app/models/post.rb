@@ -4,5 +4,8 @@ class Post < ActiveRecord::Base
 
 	validates :title, :body, :presence => true
 
+	translates :title, :body
+	accepts_nested_attributes_for :translations
+
 	default_scope :order => 'posts.created_at DESC'
 end

@@ -1,4 +1,8 @@
 = form_for @post do |f|
+	%h2 Русская версия
+	%p 
+		* Верстка новости осуществляется с помощью языка разметки Textile. Ознакомиться с языком и протестировать внешний вид новости можно на сайте
+		= link_to "RedCloth", "http://redcloth.org"
 	= f.label :title, "Заголовок"
 	%p
 		= f.text_field :title
@@ -6,7 +10,14 @@
 		= f.label :body, "Тело новости"
 	%p	
 		= f.text_area :body
-	%p 
-		* Верстка новости осуществляется с помощью языка разметки Textile. Ознакомиться с языком и протестировать внешний вид новости можно на сайте
-		= link_to "RedCloth", "http://redcloth.org"
+	%h2 Английская версия
+	= f.globalize_fields_for :en do |g|
+		= f.label :title, "Title"
+		%p
+			= g.text_field :title
+		%p
+			= g.label :body, "Body"
+		%p	
+			= g.text_area :body
+
 	= f.submit "Опубликовать"

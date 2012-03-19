@@ -10,15 +10,14 @@
 			%hr.menu_line
 			%li= link_to t(:contacts_page), contacts_path
 			%hr.menu_line
-			%li= link_to "ВАЖНЫЕ ДАТЫ", dates_path
+			%li= link_to t(:dates_page), dates_path
 			%hr.menu_line
-			%li Участникам:
+			%li= t(:to_participants)
 			
-			- if signed_in?
-			- else
+			- unless signed_in?
 				%li.indention= link_to t(:signup_page), signup_path
 				
 			%li.indention= link_to t(:thesis_rules_page), thesis_rules_path
 			
-			%li.indention= link_to "ОПЛАТА УЧАСТИЯ", payment_path	
+			%li.indention= link_to t(:payment_page), payment_path	
 			%hr.menu_line

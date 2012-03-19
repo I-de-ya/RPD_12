@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     		sign_in @user
       	redirect_to :controller => 'speeches', :action => 'new'
     	else
-      	@title = "Зарегистрироваться"
+      	@title = t(:signup_page)
       	render 'new'
     	end
   	end

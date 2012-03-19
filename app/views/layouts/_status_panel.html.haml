@@ -1,8 +1,8 @@
 .status_panel
-	%b Подача заявки
-	= "до " + speech_deadline 
-	- if signed_in?
-		- if current_user.speech == nil
+	%b= t(:application_deadline)
+	= t(:till) + speech_deadline 
+	-# if signed_in?
+		- if current_user.speeches == []
 			(
 			= link_to 'Не отправлена', registration_path, {:class => "red"}
 			)
@@ -11,9 +11,9 @@
 			= link_to 'Отправлена', speech_path(current_user.speech), {:class => "green"}
 			)
 	|	
-	%b Прием тезизов 
-	= "до " + speech_deadline 
-	- if signed_in?
+	%b= t(:abstracts_deadline)
+	= t(:till) + speech_deadline 
+	-# if signed_in?
 		- if current_user.speech.nil? || current_user.speech.thesis_url.nil?
 			(
 			= link_to 'Не отправлены', registration_path, {:class => "red"}

@@ -1,17 +1,35 @@
-= link_to "Создать доклад", new_speech_path
-%table
-	%tr
-		%th Название доклада
-		%th Организация
-		%th Авторы
-		%th	
-		%th	
-		%th	
-	- @speeches.each do |speech|
+-if current_user.admin?
+	= link_to "Создать доклад", new_speech_path
+
+	%table
 		%tr
-			%td= speech.title 
-			%td= speech.organization
-			%td= speech.author_name
-			%td= link_to "Показать", speech_path(speech)
-			%td= link_to "Редактировать", edit_speech_path(speech)
-			%td= link_to "Удалить", speech, :confirm => 'Вы уверены?', :method => :delete
+			%th Название доклада
+			%th Организация
+			%th Авторы
+			%th	
+			%th	
+			%th	
+		- @speeches.each do |speech|
+			%tr
+				%td= speech.title 
+				%td= speech.organization
+				%td= speech.author_name
+				%td= link_to "Показать", speech_path(speech)
+				%td= link_to "Редактировать", edit_speech_path(speech)
+				%td= link_to "Удалить", speech, :confirm => 'Вы уверены?', :method => :delete
+-else
+	= link_to "Добавить заявку", new_speech_path
+
+	%table
+		%tr
+			%th Название докладов
+			%th Текст докладов
+			%th	
+			%th	
+			%th	
+		- @speeches.each do |speech|
+			%tr
+				%td= link_to truncate(speech.title, :length => 40), speech_path(speech)
+				%td= speech.thesis_url ? "Есть" : "Нет"
+				%td= link_to "Редактировать", edit_speech_path(speech)
+				%td= link_to "Удалить", speech, :confirm => 'Вы уверены?', :method => :delete	

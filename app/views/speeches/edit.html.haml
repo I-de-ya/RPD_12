@@ -3,6 +3,8 @@
 		%fieldset
 			%legend Заполните заявку
 			= render 'form'
-%p= link_to 'Назад', speech_path(current_user.speech)
+%p= link_to 'Назад', speech_path
 - if current_user.admin?
 	%p= link_to '<< К списку докладов', speeches_path
+- else
+	%p= link_to '<< К списку заявок', speeches_path

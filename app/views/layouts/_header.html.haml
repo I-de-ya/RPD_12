@@ -14,23 +14,23 @@
 					= link_to "Тематические разделы", themes_path
 					|
 				- else
-					= link_to "Заявка на участие", speech_path_helper
+					= link_to "Заявки", speeches_path_helper
 					|
-					- unless current_user.speech == nil
+					- unless current_user.speeches == []
 						= link_to "Оплата", payment_path
 						|
 				= link_to "Выйти", signout_path, :method => :delete
 		- else
 			.form
 				= form_for(:session, :url => sessions_path) do |f|
-					= f.label :email, "Электронная почта"
+					= f.label :email, t(:email)
 					= f.text_field :email
-					= f.label :password, "Пароль"
+					= f.label :password, t(:password)#"Пароль"
 					= f.password_field :password
-					= f.submit "Войти"
+					= f.submit t(:signin)
 					|
-					= link_to "Зарегистрироваться", signup_path
+					= link_to t(:signup), signup_path
 	.email
 		%b 
-			Наша почта: 
+			= t(:our_email) 
 			= mail_to "rydkin.rpd2012@yandex.ru"

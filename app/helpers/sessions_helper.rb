@@ -36,12 +36,12 @@ module SessionsHelper
 		clear_return_to
 	end
 
-	def speech_path_helper
+	def speeches_path_helper
 		if signed_in?
-			if current_user.speech == nil
+			if current_user.speeches == []
 				registration_path
 			else
-				speech_path(current_user.speech)
+				speeches_path
 			end
 		else
 			registration_path
