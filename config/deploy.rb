@@ -47,3 +47,5 @@ after "deploy:bundle_gems","deploy:restart"
 
     end
  end
+
+ load 'deploy/assets'

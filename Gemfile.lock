@@ -53,7 +53,7 @@ GEM
     erubis (2.7.0)
     execjs (1.2.13)
       multi_json (~> 1.0)
-    friendly_id (4.0.0)
+    friendly_id (4.0.3)
     globalize3 (0.2.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -149,7 +149,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   dynamic_form
   execjs
-  friendly_id (~> 4.0.0)
+  friendly_id (~> 4.0.1)
   globalize3
   haml
   jquery-rails

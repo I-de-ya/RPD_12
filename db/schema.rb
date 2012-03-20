@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319091449) do
+ActiveRecord::Schema.define(:version => 20120320090544) do
 
   create_table "post_translations", :force => true do |t|
     t.integer  "post_id"
     t.string   "locale"
     t.string   "title"
     t.text     "body"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,12 +31,8 @@ ActiveRecord::Schema.define(:version => 20120319091449) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug_en"
-    t.string   "slug_ru"
+    t.string   "slug"
   end
-
-  add_index "posts", ["slug_en"], :name => "index_posts_on_slug_en"
-  add_index "posts", ["slug_ru"], :name => "index_posts_on_slug_ru"
 
   create_table "speeches", :force => true do |t|
     t.string   "organization"
@@ -51,6 +48,17 @@ ActiveRecord::Schema.define(:version => 20120319091449) do
     t.boolean  "is_plenar",             :default => false
     t.string   "thesis"
   end
+
+  create_table "theme_translations", :force => true do |t|
+    t.integer  "theme_id"
+    t.string   "locale"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "theme_translations", ["locale"], :name => "index_theme_translations_on_locale"
+  add_index "theme_translations", ["theme_id"], :name => "index_theme_translations_on_theme_id"
 
   create_table "themes", :force => true do |t|
     t.string   "title"

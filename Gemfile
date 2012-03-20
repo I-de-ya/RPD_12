@@ -17,7 +17,7 @@ gem 'globalize3'
 gem 'dynamic_form'
 gem 'carrierwave'
 gem 'RedCloth'
-gem "friendly_id", "~> 4.0.0"
+gem "friendly_id", "~> 4.0.1"
 
 # Gems used only for assets and not required
 # in production environments by default.

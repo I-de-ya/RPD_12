@@ -10,9 +10,11 @@
 		= f.label :body, "Тело новости"
 	%p	
 		= f.text_area :body
+	
 	%h2 Английская версия
 	= f.globalize_fields_for :en do |g|
-		= f.label :title, "Title"
+		
+		= g.label :title, "Title"
 		%p
 			= g.text_field :title
 		%p
