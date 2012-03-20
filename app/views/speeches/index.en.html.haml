@@ -18,20 +18,20 @@
 					%td= link_to "Редактировать", edit_speech_path(speech)
 					%td= link_to "Удалить", speech, :confirm => 'Вы уверены?', :method => :delete
 -else
-	= link_to "Добавить заявку", new_speech_path
+	= link_to "Add application form", new_speech_path
 	.styled
 		%table
 			%tr
-				%th Название доклада
-				%th Текст доклада
+				%th Speech title
+				%th Attached abstract
 				%th	
 				%th	
 			- @speeches.each do |speech|
 				%tr
 					%td= link_to truncate(speech.title, :length => 40), speech_path(speech)
 					- if speech.thesis_url
-						%td.green= "Есть"
+						%td.green= "Yes"
 					- else
-						%td.red= "Нет"
-					%td= link_to "Редактировать", edit_speech_path(speech)
-					%td= link_to "Удалить", speech, :confirm => 'Вы уверены?', :method => :delete	
+						%td.red= "No"
+					%td= link_to "Edit", edit_speech_path(speech)
+					%td= link_to "Delete", speech, :confirm => 'Are you sure?', :method => :delete	

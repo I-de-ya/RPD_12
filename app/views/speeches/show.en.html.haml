@@ -1,0 +1,47 @@
+- if @speech.thesis_url.nil?
+	=render "form_for_add_thesis.html.haml"
+%p
+	.rpd_form
+		%fieldset
+			%legend= @legend_title
+			%table
+				%tr
+					%td.speech_show
+						%B Speech title:
+					%td= @speech.title
+				%tr
+					%td.speech_show
+						%B Organization name:
+					%td= @speech.organization
+				%tr
+					%td.speech_show
+						%B Full name of the authors:
+					%td= @speech.author_name	
+				%tr
+					%td.speech_show
+						%B Phone number:
+					%td= @speech.phone
+				%tr
+					%td.speech_show
+						%B E-mail:
+					%td= @speech.user.nil? ? "-" : @speech.user.email
+				%tr
+					%td.speech_show
+						%B Thematic section:
+					%td= @speech.theme.nil? ? '-' : @speech.theme.title
+				-#%tr
+					%td.speech_show
+						%B Подписка на рассылку новостей:
+					%td= @speech.delivery_subscription ? 'Да' : 'Нет'
+				- if @speech.thesis_url.nil?
+				- else
+					%tr
+						%td.speech_show
+							%B Abstract
+							%td= link_to File.basename(@speech.thesis_url), @speech.thesis_url
+			%p= link_to "Edit", edit_speech_path
+			%p
+			- if current_user.admin?
+				= link_to "<< Назад, к списку докладов", speeches_path
+			- else
+				= link_to "<< Back to applications list", speeches_path

@@ -28,6 +28,21 @@ en:
   abstracts_deadline: "Abstracts deadline"
   till: ""
   back_to_main: "<< Back on main page"
+  attention_abstract_deadline: "Attention! Abstract deadline is "
+  fill_in_form: "Fill in form"
+  application_forms: "Applications"
+  speech_title: "Speech title"
+  organization_name: "Organization name"
+  full_name: "Full name of the author (authors)"
+  phone_number: "Phone number"
+  choose_thematic_section: "Choose thematic section:"
+  attach_file: "Attach abstract (file smaller than 4MB)"
+  title_placeholder: ""
+  organization_placeholder: ""
+  author_name_placeholder: ""
+  your_application_form: "Your application form"
+  send: "Send"
+  payment: "Payment"
 
   errors:
     messages:

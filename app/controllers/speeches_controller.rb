@@ -1,15 +1,16 @@
 # coding: utf-8
 class SpeechesController < ApplicationController
   before_filter :authenticate
-  before_filter :correct_user, :only => [:edit, :update, :show]
-  before_filter :admin_user, :only => [:delete, :destroy]
+  before_filter :correct_user, :only => [:edit, :update, :show, :delete, :destroy]
+#  before_filter :admin_user, :only => []
 #  before_filter :has_speech, :only => [:new]
 
   def index
-  	@title = t(:speeches_management_page)
     if current_user.admin
+      @title = t(:speeches_management_page)
       @speeches = Speech.all
     else
+      @title = t(:application_forms)
       @speeches = current_user.speeches
     end
   end
@@ -58,7 +59,7 @@ class SpeechesController < ApplicationController
 
 
   def show
-  	@legend_title = current_user.admin? ? "Текущий доклад" : "Ваша заявка"
+  	@legend_title = current_user.admin? ? "Текущий доклад" : t(:your_application_form)
     @speech = Speech.find(params[:id])
   end
 

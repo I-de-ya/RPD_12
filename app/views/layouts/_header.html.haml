@@ -14,12 +14,12 @@
 					= link_to "Тематические разделы", themes_path
 					|
 				- else
-					= link_to "Заявки", speeches_path_helper
+					= link_to t(:application_forms)+" (#{current_user.speeches.count})", speeches_path_helper
 					|
 					- unless current_user.speeches == []
-						= link_to "Оплата", payment_path
+						= link_to t(:payment), payment_path
 						|
-				= link_to "Выйти", signout_path, :method => :delete
+				= link_to t(:signout), signout_path, :method => :delete
 		- else
 			.form
 				= form_for(:session, :url => sessions_path) do |f|

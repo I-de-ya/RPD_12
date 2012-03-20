@@ -44,7 +44,7 @@ module RPD12
 
     config.assets.precompile += ['locales/en.css.erb', 'locales/ru.css.erb']
 
-    config.assets.css_compressor = :yui
+    # config.assets.css_compressor = :yui
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

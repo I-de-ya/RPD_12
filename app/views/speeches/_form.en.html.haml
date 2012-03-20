@@ -2,10 +2,8 @@
 	%fieldset
 		#error_explanation
 			%h4
-				= Russian.p(@speech.errors.count, "Обнаружена", "Обнаружены", "Обнаружено")
 				= @speech.errors.count
-				= Russian.p(@speech.errors.count, "ошибка", "ошибки", "ошибок")
-				= ":"
+				= "errors in fields:"
 			- @speech.errors.full_messages.each do |msg|
 				%li= msg
 
