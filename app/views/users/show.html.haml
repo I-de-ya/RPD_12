@@ -1,0 +1,14 @@
+%h2 Пользователь
+.styled
+	%table
+		%tr
+			%td Имя
+			%td= @user.name.nil? ? "-" : @user.name
+		%tr
+			%td Адрес электронной почты
+			%td= @user.email
+		%tr
+			%td Права администратора
+			%td= @user.admin ? "Есть" : "Нет"
+%p= link_to "Редактировать права пользователя", edit_user_path
+%p= link_to "<< Назад, к списку пользователей", users_path

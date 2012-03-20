@@ -3,8 +3,10 @@
 		%th Имя
 		%th Адрес электронной почты
 		%th Права администратора
+		%th
 	- @users.each do |user|
 		%tr
 			%td= user.name.nil? ? "-" : user.name
-			%td= user.email
+			%td= link_to user.email, user_path(user)
 			%td= user.admin ? "Есть" : "Нет"
+			%td= link_to "Удалить", user, :confirm => 'Вы уверены?', :method => :delete	
