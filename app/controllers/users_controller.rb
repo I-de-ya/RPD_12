@@ -1,7 +1,7 @@
 # coding: utf-8
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index]
-	before_filter :admin_user, :only => [:index]
+	before_filter :admin_user, :except => [:new, :create]
   
   def index
     @title = "Пользователи"
@@ -35,12 +35,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.password = params[:password]
     @user.toggle!(:admin)
-    if @user.update_attributes(params[:user])
-      redirect_to @user, :notice => 'Прaва пользователя были успешно обновлены.'
-    else
-      render :action => "edit"
-    end
+    @user.save
+    redirect_to @user, :notice => 'Прaва пользователя были успешно обновлены.'
   end
 
   def delete

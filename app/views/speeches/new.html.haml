@@ -2,7 +2,8 @@
 -if current_user.admin?
 	%h1.title Новый доклад
 -else
-	= t(:attention_abstract_deadline) + speech_deadline + "."
+	= (link_to "<< Назад, к списку заявок", speeches_path) if current_user.speeches.count != 0
+	%p= t(:attention_abstract_deadline) + speech_deadline + "."
 %p
 	.rpd_form
 		%fieldset

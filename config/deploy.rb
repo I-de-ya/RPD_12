@@ -22,21 +22,30 @@ set :keep_releases, 1
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+
+after "deploy:update_code", "deploy:symlink_uploads"
 after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems","deploy:restart"
 
  # If you are using Passenger mod_rails uncomment this:
  namespace :deploy do
- 	task :bundle_gems do
+ 	
+  task :bundle_gems do
  		run "cd #{deploy_to}/current && bundle install"
  	end
- 	desc "Populates the Production Database"
-    task :seed do
-    	puts "\n\n=== Populating the Production Database! ===\n\n"
-      	run "cd #{current_path}; rake db:seed RAILS_ENV=production"
-    end
-   	task :start do ; end
-   	task :stop do ; end
+ 	
+  desc "Populates the Production Database"
+  task :seed do
+    puts "\n\n=== Populating the Production Database! ===\n\n"
+    run "cd #{current_path}; rake db:seed RAILS_ENV=production"
+  end
+  
+  task :symlink_uploads do
+    run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
+  end
+
+  task :start do ; end
+  task :stop do ; end
 
 	task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
@@ -45,7 +54,7 @@ after "deploy:bundle_gems","deploy:restart"
      
 	namespace :db do
 
-    end
+  end
  end
 
  load 'deploy/assets'

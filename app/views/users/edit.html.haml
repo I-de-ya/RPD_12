@@ -1,4 +1,6 @@
 %h3= "Текущий пользователь#{" не" unless @user.admin?} является администратором"
 = form_for @user do |f|
-	= f.submit (@user.admin? ? "Убрать права администратора" : "Добавить права администратора")
+	= f.label :password, "Введите новый пароль"
+	= f.text_field :password
+	%p= f.submit (@user.admin? ? "Убрать права администратора" : "Добавить права администратора")
 %p= link_to "Назад", user_path
