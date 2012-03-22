@@ -54,3 +54,4 @@ ru:
       wrong_size: "is the wrong size (should be %{file_size})"
       size_too_small: "is too small (should be at least %{file_size})"
       size_too_big: "превышает установленный размер (должен быть не более %{file_size})"
+      extension_white_list_error: "должен иметь расширение .doc"
