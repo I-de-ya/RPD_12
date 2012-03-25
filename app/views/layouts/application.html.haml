@@ -30,3 +30,5 @@
 			= mail_to "rydkin.rpd2012@yandex.ru"
 			|
 			= language_selector
+		- if Rails.env == "production"
+			= render 'metrika_script'

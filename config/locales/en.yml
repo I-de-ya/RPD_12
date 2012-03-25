@@ -45,6 +45,7 @@ en:
   your_application_form: "Your application form"
   send: "Send"
   payment: "Payment"
+  application_was_updated: "Application form was successfully updated."
 
   errors:
     messages:

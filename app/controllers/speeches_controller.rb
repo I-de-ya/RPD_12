@@ -73,7 +73,7 @@ class SpeechesController < ApplicationController
   	@speech = Speech.find(params[:id])
   	@themes = Theme.all
     if @speech.update_attributes(params[:speech])
-  		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно обновлен.' : 'Заявка была успешно обновлена'
+  		redirect_to @speech, :notice => current_user.admin? ? 'Доклад был успешно обновлен.' : t(:application_was_updated)
   	else
   		render :action => "edit"
   	end

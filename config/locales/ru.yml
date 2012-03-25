@@ -48,6 +48,7 @@ ru:
   your_application_form: "Ваша заявка"
   send: "Отправить"
   payment: "Оплата"
+  application_was_updated: "Заявка была успешно обновлена"
 
   errors:
     messages:

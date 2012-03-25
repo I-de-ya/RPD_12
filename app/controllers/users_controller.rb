@@ -35,9 +35,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.password = params[:password]
     @user.toggle!(:admin)
-    @user.save
+    @user.update_attributes(params[:user])
     redirect_to @user, :notice => 'Прaва пользователя были успешно обновлены.'
   end
 
