@@ -7,3 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+  var IE='\v'=='v';
+  if (IE) {
+    location.replace("/old_browsers.html");
+  }
+});
