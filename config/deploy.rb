@@ -10,6 +10,8 @@ set :repository,  "git@github.com:I-de-ya/RPD_12.git" #{}"#{user}@#{domain}:git/
 set :deploy_to, "/var/www/html/#{application}"
 set :deploy_via, :remote_cache
 
+set :port, 8822
+
 set :scm, "git"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
