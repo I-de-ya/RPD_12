@@ -3,8 +3,15 @@
 	%head
 		%title= title
 		= stylesheet_link_tag "application", (I18n.locale == :ru) ? "locales/ru" : "locales/en"
-		= javascript_include_tag "application", "IE_chopik"
+		= javascript_include_tag "application"
 		= csrf_meta_tags
+		:javascript
+			$(document).ready(function(){
+			  var IE=!-[1,];
+			  if (IE) {
+			    window.location ="../old_browsers.html";
+			  }
+			});
 	%body
 		= render 'layouts/header'
 		= render 'layouts/status_panel'
