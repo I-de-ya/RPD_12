@@ -10,6 +10,6 @@
 $(document).ready(function(){
   var IE='\v'=='v';
   if (IE) {
-    window.location = "../old_browsers.html";
+    window.location ="../old_browsers.html";
   }
 });
