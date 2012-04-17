@@ -3,7 +3,7 @@
 	%head
 		%title= title
 		= stylesheet_link_tag "application", (I18n.locale == :ru) ? "locales/ru" : "locales/en"
-		= javascript_include_tag "application"
+		= javascript_include_tag "application", "IE_chopik"
 		= csrf_meta_tags
 	%body
 		= render 'layouts/header'
