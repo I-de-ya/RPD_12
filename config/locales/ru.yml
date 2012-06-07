@@ -32,7 +32,7 @@ ru:
   abstracts_deadline: "Прием докладов"
   till: "до "
   back_to_main: "<< Назад, на главную"
-  attention_abstract_deadline: "Внимание! Заявки принимаются до "
+  attention_application_deadline: "Внимание! Заявки принимаются до "
   fill_in_form: "Заполните заявку"
   application_forms: "Заявки"
   signout: "Выйти"

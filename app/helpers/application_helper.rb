@@ -23,7 +23,11 @@ module ApplicationHelper
 		" *" if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
 	end
 
-	def speech_deadline
-		"01.06.2012"
+	def application_deadline
+		"15.08.2012"
+	end
+
+	def abstracts_deadline
+		"10.09.2012"
 	end
 end

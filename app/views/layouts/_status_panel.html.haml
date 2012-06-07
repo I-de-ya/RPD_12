@@ -1,6 +1,6 @@
 .status_panel
 	%b= t(:application_deadline)
-	= t(:till) + speech_deadline 
+	= t(:till) + application_deadline 
 	-# if signed_in?
 		- if current_user.speeches == []
 			(
@@ -12,7 +12,7 @@
 			)
 	|	
 	%b= t(:abstracts_deadline)
-	= t(:till) + speech_deadline 
+	= t(:till) + abstracts_deadline 
 	-# if signed_in?
 		- if current_user.speech.nil? || current_user.speech.thesis_url.nil?
 			(
