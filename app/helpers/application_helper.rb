@@ -30,4 +30,13 @@ module ApplicationHelper
 	def abstracts_deadline
 		"10.09.2012"
 	end
+
+	def theses_counter
+		counter = 0
+		Speech.all.each do |speech|
+			counter+=1 if speech.thesis?
+		end
+		return counter.to_s
+	end
+
 end

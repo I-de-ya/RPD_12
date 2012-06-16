@@ -5,11 +5,11 @@
 				= current_user.email
 				|
 				- if current_user.admin?
-					= link_to t(:news_management_page), posts_path
+					= link_to t(:news_management_page)+" (#{Post.all.count})", posts_path
 					|
-					= link_to t(:speeches_management_page), speeches_path
+					= link_to t(:speeches_management_page)+" (#{Speech.all.count}/#{theses_counter})", speeches_path
 					|
-					= link_to "Настройка прав доступа", users_path
+					= link_to "Настройка прав доступа (#{User.all.count})", users_path
 					|
 					= link_to "Тематические разделы", themes_path
 					|
