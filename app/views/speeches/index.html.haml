@@ -1,5 +1,6 @@
 -if current_user.admin?
-	= link_to "Создать доклад", new_speech_path
+	%p= link_to "Создать доклад", new_speech_path
+	%p= link_to "Доклады по темам", thematic_index_speeches_path
 	.styled
 		%table
 			%tr

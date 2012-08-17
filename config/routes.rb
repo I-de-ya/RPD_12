@@ -49,7 +49,9 @@ RPD12::Application.routes.draw do
       end
     end
     resources :posts
-    resources :speeches
+    resources :speeches do
+      get 'thematic_index', :on => :collection
+    end
     resources :themes
     resources :sessions, :only => [:new, :create, :destroy]
   end

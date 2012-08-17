@@ -3,7 +3,7 @@
 	%head
 		%title= title
 		= stylesheet_link_tag "application", (I18n.locale == :ru) ? "locales/ru" : "locales/en"
-		= javascript_include_tag "application"
+		= javascript_include_tag "application", ("admin/admin" if signed_in_and_admin?)
 		= csrf_meta_tags
 		:javascript
 			$(document).ready(function(){
@@ -17,8 +17,13 @@
 		= render 'layouts/status_panel'
 		%left_bar
 			= render 'layouts/nav'
+			%p
+				- if signed_in_and_admin?
+					= button_tag(:class => "btn-slide") do
+						= content_tag(:i, " свернуть", :class => "icon-circle-arrow-up large-icon")
 
-		.content
+
+		.content#expandable
 			%h2.title= @title
 
 			.main

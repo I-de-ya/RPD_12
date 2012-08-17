@@ -1,0 +1,28 @@
+-if current_user.admin?
+  %p= link_to "Создать доклад", new_speech_path
+  %p= link_to "К таблице докладов", speeches_path
+  Секции:
+  %ol
+    %li Пленарные
+    - @themes.each do |theme|
+      %li= truncate(theme.title, :length => 50)
+      %ul
+        - theme.speeches.each do |speech|
+          %li= "#{truncate(speech.title, :length => 50)} (#{speech.author_name})"
+  -#.styled
+    %table
+      %tr
+        %th Название доклада
+        %th Организация
+        %th Авторы
+        %th 
+        %th 
+        %th 
+      - @speeches.each do |speech|
+        %tr
+          %td= speech.title 
+          %td= speech.organization
+          %td= speech.author_name
+          %td= link_to "Показать", speech_path(speech)
+          %td= link_to "Редактировать", edit_speech_path(speech)
+          %td= link_to "Удалить", speech, :confirm => 'Вы уверены?', :method => :delete

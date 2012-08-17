@@ -2,6 +2,7 @@
 class SpeechesController < ApplicationController
   before_filter :authenticate
   before_filter :correct_user, :only => [:edit, :update, :show, :delete, :destroy]
+  before_filter :admin_user, :only => [:thematic_index]
 #  before_filter :admin_user, :only => []
 #  before_filter :has_speech, :only => [:new]
 
@@ -15,6 +16,11 @@ class SpeechesController < ApplicationController
     end
   end
   
+  def thematic_index
+    @title = t(:speeches_management_page)
+    @themes = Theme.includes(:speeches).all
+  end
+
   def new
   	@title = t(:registration_page) unless current_user.admin?
     @themes = Theme.all

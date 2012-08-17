@@ -1,5 +1,5 @@
 - if @speech.thesis_url.nil?
-	=render "form_for_add_thesis.html.haml"
+	=render "form_for_add_thesis"
 %p
 	.rpd_form
 		%fieldset
@@ -24,7 +24,11 @@
 				%tr
 					%td.speech_show
 						%B Контактный e-mail:
-					%td= @speech.user.nil? ? "-" : @speech.user.email
+					%td
+						- if @speech.email.nil? 
+							= @speech.user.nil? ? "-" : @speech.user.email
+						- else
+							= @speech.email 
 				%tr
 					%td.speech_show
 						%B Тематический раздел:
