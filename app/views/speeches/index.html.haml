@@ -1,6 +1,11 @@
 -if current_user.admin?
-	%p= link_to "Создать доклад", new_speech_path
-	%p= link_to "Доклады по темам", thematic_index_speeches_path
+	%table
+		%tr
+			%td=link_to "Создать доклад", new_speech_path
+			%td= "|"
+			%td=link_to "Доклады по темам", thematic_index_speeches_path
+			%td= "|"
+			%td=link_to "Тексты не отправили", email_notification_speeches_path
 	.styled
 		%table
 			%tr

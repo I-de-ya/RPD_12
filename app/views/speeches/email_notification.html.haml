@@ -1,0 +1,22 @@
+-if current_user.admin?
+  %table
+    %tr
+      %td=link_to "Создать доклад", new_speech_path
+      %td= "|"
+      %td=link_to "К таблице докладов", speeches_path
+      %td= "|"
+      %td=link_to "Доклады по темам", thematic_index_speeches_path
+  Email'ы по докладам:
+  %ul
+    - @speeches.each do |speech|
+      - if !speech.user.nil? && !speech.user.email.nil?
+        %li= link_to speech.user.email, speech_path(speech)
+      - elsif !speech.email.nil?
+        %li= link_to speech.email, speech_path(speech)
+      - else
+        %li= link_to "нет email\'а", speech_path(speech)
+
+  Нормализованный список (без повторений):
+  %ul
+    - email_normalizer(@speeches).each do |email|
+      %li= email

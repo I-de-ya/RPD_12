@@ -51,6 +51,7 @@ RPD12::Application.routes.draw do
     resources :posts
     resources :speeches do
       get 'thematic_index', :on => :collection
+      get 'email_notification', :on => :collection
     end
     resources :themes
     resources :sessions, :only => [:new, :create, :destroy]

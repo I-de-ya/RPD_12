@@ -39,4 +39,15 @@ module ApplicationHelper
 		return counter.to_s
 	end
 
+	def email_normalizer(speeches)
+		emails = []
+		speeches.each do |speech|
+      if !speech.user.nil? && !speech.user.email.nil?
+        emails << speech.user.email
+      elsif !speech.email.nil?
+        emails << speech.email
+      end
+    end
+    return emails.uniq
+	end
 end

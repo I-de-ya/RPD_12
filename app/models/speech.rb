@@ -8,4 +8,13 @@ class Speech < ActiveRecord::Base
 
 	validates :title, :organization, :author_name, :presence => true
 	validates :thesis, :file_size => {:maximum => 4.megabytes.to_i}
+
+  def self.without_thesis
+    array = []
+    Speech.all.each do |speech|
+      array << speech unless speech.thesis?
+    end
+    return array
+  end
+
 end
