@@ -8,12 +8,20 @@
       %td=link_to "Тексты не отправили", email_notification_speeches_path
   Секции:
   %ol
-    %li Пленарные
+    %h3
+      %li Пленарные
     - @themes.each do |theme|
-      %li= truncate(theme.title, :length => 50)
-      %ul
+      %h3
+        %li= theme.title
+      %ol{:style => "list-style-type: lower-alpha;"}
         - theme.speeches.each do |speech|
-          %li= "#{truncate(speech.title, :length => 50)} (#{speech.author_name})"
+          %li
+            %b= speech.title
+            %p= speech.author_name
+            %p= speech.organization
+            -# if speech.thesis_url
+              %p
+                %i= File.basename(speech.thesis_url)
   -#.styled
     %table
       %tr
