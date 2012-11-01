@@ -1,6 +1,6 @@
 # coding: utf-8
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:index]
+  before_filter :authenticate, :only => [:index, :new, :create]
 	before_filter :admin_user, :except => [:new, :create]
   
   def index

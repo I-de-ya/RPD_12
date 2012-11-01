@@ -33,6 +33,10 @@ class PagesController < ApplicationController
     @title = t(:payment_page)
   end
 
+  def schedule
+    @title = t(:schedule_page)
+  end
+
   def download_rules
     send_file "#{Rails.root}/public/paper_execution.doc"
   end

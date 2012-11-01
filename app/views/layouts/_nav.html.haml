@@ -14,10 +14,12 @@
 			%hr.menu_line
 			%li= t(:to_participants)
 			
-			- unless signed_in?
-				%li.indention= link_to t(:signup_page), signup_path
+			-#
+				- unless signed_in?
+					%li.indention= link_to t(:signup_page), signup_path
 				
 			%li.indention= link_to t(:thesis_rules_page), thesis_rules_path
 			
 			%li.indention= link_to t(:payment_page), payment_path	
+			%li.indention= link_to t(:schedule_page), schedule_path	
 			%hr.menu_line

@@ -19,7 +19,12 @@
             %b= speech.title
             %p= speech.author_name
             %p= speech.organization
-            -# if speech.thesis_url
+            - if speech.email.nil? 
+              %p= speech.user.nil? ? "-" : speech.user.email
+            - else
+              %p= speech.email
+
+            - if speech.thesis_url
               %p
                 %i= File.basename(speech.thesis_url)
   -#.styled

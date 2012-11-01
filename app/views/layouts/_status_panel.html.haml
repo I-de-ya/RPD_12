@@ -1,4 +1,8 @@
 .status_panel
+	%b= t(:work_of_symposium)
+	4.12.2012 - 7.12.2012 
+
+-#	
 	%b= t(:application_deadline)
 	= t(:till) + application_deadline 
 	-# if signed_in?
@@ -27,3 +31,4 @@
 	%b Оплата
 	до 31.12.2012
 	= signed_in? ? "(Готово)" : ""
+
